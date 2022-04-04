@@ -1,0 +1,49 @@
+<div class="Log-in-container">
+
+  <div class="set-the-bar-title">
+    <iframe src="https://ntmaker.gfto.ru/newneontexten/?image_height=400&image_width=1200&image_font_shadow_width=0&image_font_size=150&image_background_color=4D194D&image_text_color=FFFFFF&image_font_shadow_color=6A6A6A&image_url=&image_text=Set The Bar&image_font_family=Metropolis&" frameborder='no' scrolling='no' width="1200" height="400"></iframe>
+  </div>
+  <div class="set-the-bar-text">
+    <div class="set-the-bar-moto">Find your perfect bar</div>
+    <div class="set-the-bar-intro">introduction text about the app comes here and it will be very nice in lato font</div>
+  </div>
+  <div class="input-info-container">
+
+    <%- include ('./partials/messages') %>
+    <form action="/users/login" method="POST">
+
+      <div>
+        <label for="email"></label>
+        <input
+        class="input-info"
+        type="email"
+        name="email"
+        placeholder="Jon_Doe@Set-The-Bar.be"
+        />
+      </div>
+
+      <div>
+        <label for="password"></label>
+        <input
+        class="input-info"
+        type="password"
+        name="password"
+        placeholder="********"
+        />
+      </div>
+    
+      <button type="submit" class="btn btn-primary btn-block input-info">Login</button>
+       
+      <div class="connect-with-tier-container">
+        <div class="tier-logo"></div>
+        <div class="tier-text">Log-in with Facebook</div>
+      </div>
+    </form>
+  </div>
+  <div class="no-account">
+    Don’t have an account yet? <span><a href="/users/register" class="btn btn-primary btn-block mb-2"
+      >Sign Up</a></span>
+  </div>
+    
+</div>
+  
