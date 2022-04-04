@@ -28,9 +28,9 @@ router.get('/review', (req,res)=>{
 })
 
 //detailed bar page//THESE LINES STILL NEED TO BE ADDED ON MASTER 
-router.get('/show', (req,res)=>{
-  res.render('bardetail');
-})
+// router.get('/show', (req,res)=>{
+//   res.render('bardetail');
+// })
 
 
 
