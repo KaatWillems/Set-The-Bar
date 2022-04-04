@@ -36,7 +36,7 @@ const getStars = (bar) => {
 
 router.post("/search", async (req, res) => {
     //console.log("testtttttttt router.post")
-    //console.log(req.body, "req.body")
+    console.log(req.body, "req.body")
     if(!req.user.Profile){
 
         bararr = []
@@ -76,7 +76,7 @@ router.post("/search", async (req, res) => {
         bars: [],
 
       });
-    //console.log("testtttttttt router.get")
+    console.log("testtttttttt router.get")
 
 
     // console.log(req.body, "from profiles.js brain")
