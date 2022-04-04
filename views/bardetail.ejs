@@ -1,7 +1,7 @@
 <div class="review-container">
     <div class="review-left-text">
         <div class="img-bar"></div>
-        <h2 class="bartitle"> Le Tavernier</h2>
+        <h2 class="bartitle"> <%= bar.name %></h2>
         <div class="review-rating"></div>
     </div>
   
@@ -10,7 +10,7 @@
     <form>
         <div class="show-crowd"> 
             <p>Crowd</p>
-            <input type="range" min="1" max="9" value="5" class="show-slider">
+            <input type="range" min="1" max="9" value="5" class="show-slider" disabled>
     
            <div class="show-labels-crowd"> 
                 <span>Pretty quiet</span> <span>Room for more</span> <span>Full house</span>
@@ -19,7 +19,7 @@
     
         <div class="show-hygiene"> 
           <p>Hygiene</p>
-          <input type="range" min="1" max="9" value="5"  class="show-slider">
+          <input type="range" min="1" max="9" value="5"  class="show-slider" disabled>
           <div class="show-labels-hygiene">
               <span>As clean as it gets</span> <span>Decent</span> <span>Everything's sticky </span>
             </div>
@@ -27,14 +27,14 @@
     
         <div class="show-atmosphere"> 
           <p>Atmosphere</p>
-          <input type="range" min="1" max="9" value="5" class="show-slider">
+          <input type="range" min="1" max="9" value="5" class="show-slider" disabled>
           <div class="show-labels-atmo">
             <span>Dancing</span> <span>Chatting</span></div>
         </div> 
     
         <div class="show-safety"> 
           <p>Safety</p>
-          <input type="range" min="1" max="9" value="5" class="show-slider">
+          <input type="range" min="1" max="9" value="5" class="show-slider" disabled>
          <div class="show-labels-safety"> 
            <span>I feel safe</span> <span>Creep alert</span></div>
         </div> 
