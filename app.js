@@ -10,6 +10,8 @@ const multer = require("multer");
 const cloudinary = require("cloudinary");
 const {CloudinaryStorage} = require("multer-storage-cloudinary");
 const fileupload = require('express-fileupload')
+const dotenv = require('dotenv'); //added mongodb
+dotenv.config(); //added for mongodb 
 
 //passport config:
 require('./config/passport')(passport)
