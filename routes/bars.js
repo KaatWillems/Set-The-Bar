@@ -12,9 +12,9 @@ const Bar = require("../models/bar").Bar
 const getStars = (bar) => { 
     let rating = bar.ratings;
     ratingarr = rating.split(',')
-    console.log(ratingarr)
+    //console.log(ratingarr)
     starNbr = parseInt(ratingarr[0])
-    console.log(starNbr)
+    //console.log(starNbr)
     let finalArr = []
     for (let i = 0; i < starNbr; i++) {
       finalArr.push('*')
@@ -35,8 +35,8 @@ const getStars = (bar) => {
 
 
 router.post("/search", async (req, res) => {
-    console.log("testtttttttt router.post")
-    console.log(req.body, "req.body")
+    //console.log("testtttttttt router.post")
+    //console.log(req.body, "req.body")
     if(!req.user.Profile){
 
         bararr = []
@@ -76,7 +76,7 @@ router.post("/search", async (req, res) => {
         bars: [],
 
       });
-    console.log("testtttttttt router.get")
+    //console.log("testtttttttt router.get")
 
 
     // console.log(req.body, "from profiles.js brain")
