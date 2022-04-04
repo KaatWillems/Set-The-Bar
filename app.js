@@ -10,13 +10,11 @@ const multer = require("multer");
 const cloudinary = require("cloudinary");
 const {CloudinaryStorage} = require("multer-storage-cloudinary");
 const fileupload = require('express-fileupload')
-const dotenv = require('dotenv'); //added mongodb
-dotenv.config(); //added for mongodb 
 
 //passport config:
 require('./config/passport')(passport)
 //mongoose (connected with Set the bar)
-mongoose.connect(process.env.DB_CONNECT,{useNewUrlParser: true, useUnifiedTopology : true})
+mongoose.connect('mongodb+srv://Setthebar:Setthebar100@cluster0.pxj0m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{useNewUrlParser: true, useUnifiedTopology : true})
 .then(() => console.log('connected with Setthebar DB'))
 .catch((err)=> console.log(err));
 
@@ -74,5 +72,4 @@ app.use('/bars',require('./routes/bars'));
 
 
 
-app.listen(process.env.PORT || 4000);
-
+app.listen(4000);
