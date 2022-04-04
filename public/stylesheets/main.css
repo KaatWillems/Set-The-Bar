@@ -1,0 +1,786 @@
+/*
+
+All grid code is placed in a 'supports' rule (feature query) at the bottom of the CSS (Line 310).
+
+The 'supports' rule will only run if your browser supports CSS grid.
+
+Flexbox and floats are used as a fallback so that browsers which don't support grid will still recieve a similar layout.
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Satisfy&display=swap');/* Base Styles */
+
+
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 2.2rem;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #4D194D;
+    color: #262626;
+}
+.inner-body {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.review-container {
+background-color: whitesmoke;
+}
+
+img {
+    display: block;
+}
+
+.post_image{
+  display:block;
+  height: 250px;
+  width: 250px;
+  background-size: cover;
+  background-position: center;
+
+}
+.suggestions{
+  width: 200px;
+}
+.avatar{
+  height: 30px;
+  width: 30px;
+  background-color: lightgrey;
+  border-radius:50px;
+}
+.suggestion{
+  display: flex;
+  align-items: flex-end;
+  margin-top: 5px;
+  width: 200px;
+  background-color: #e2e2e291;
+  padding: 5px 10px;
+  border-radius:5px;
+  cursor: pointer
+}
+.container {
+    max-width: 93.5rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.suggestion .name{
+  margin-left: 5px;
+}
+
+.btn {
+    display: inline-block;
+    font: inherit;
+    background: none;
+    border: none;
+    color: inherit;
+    padding: 0;
+    cursor: pointer;
+}
+
+.btn:focus {
+    outline: 0.5rem auto #4d90fe;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Profile Section */
+
+.profile {
+    padding: 5rem 0;
+}
+
+.profile::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.profile-image {
+    float: left;
+    width: calc(33.333% - 1rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3rem;
+}
+
+.profile-image img {
+    border-radius: 50%;
+}
+
+.profile-user-settings,
+.profile-stats,
+.profile-bio {
+    float: left;
+    width: calc(66.666% - 2rem);
+}
+
+.profile-user-settings {
+    margin-top: 1.1rem;
+}
+
+.profile-user-name {
+    display: inline-block;
+    font-weight: 300;
+}
+
+.profile-edit-btn {
+    line-height: 1.8;
+    border: 0.1rem solid #dbdbdb;
+    border-radius: 0.3rem;
+    padding: 0 2.4rem;
+    margin-left: 2rem;
+}
+
+.profile-settings-btn {
+    margin-left: 1rem;
+}
+
+.profile-stats {
+    margin-top: 2.3rem;
+}
+
+.profile-stats li {
+    display: inline-block;
+    line-height: 1.5;
+    margin-right: 4rem;
+    cursor: pointer;
+}
+
+.profile-stats li:last-of-type {
+    margin-right: 0;
+}
+
+.profile-bio {
+    font-weight: 400;
+    line-height: 1.5;
+    margin-top: 2.3rem;
+}
+
+.profile-real-name,
+.profile-stat-count,
+.profile-edit-btn {
+    font-weight: 600;
+}
+
+/* Gallery Section */
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: -1rem -1rem;
+    padding-bottom: 3rem;
+}
+
+.gallery-item {
+    position: relative;
+    margin: 1rem;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 15px !important;
+}
+
+.gallery-item:hover .gallery-item-info,
+
+.gallery-item:focus .gallery-item-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item-info {
+    display: none;
+}
+
+.gallery-item-info li {
+    display: inline-block;
+    font-weight: 600;
+}
+
+.gallery-item-likes {
+    margin-right: 2.2rem;
+}
+
+.gallery-item-type {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+}
+
+.fa-clone,
+.fa-comment {
+    transform: rotateY(180deg);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Loader */
+
+.loader {
+    width: 5rem;
+    height: 5rem;
+    border: 0.6rem solid #999;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: loader 500ms linear infinite;
+}
+
+/* Media Query */
+/* Spinner Animation */
+
+@keyframes loader {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*
+
+The following code will only run if your browser supports CSS grid.
+
+Remove or comment-out the code block below to see how the browser will fall-back to flexbox & floated styling.
+
+*/
+
+@supports (display: grid) {
+    .profile {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: repeat(3, auto);
+        grid-column-gap: 3rem;
+        align-items: center;
+    }
+
+    .profile-image {
+        grid-row: 1 / -1;
+    }
+
+
+
+    .profile-image,
+    .profile-user-settings,
+    .profile-stats,
+    .profile-bio,
+    .gallery-item,
+    .gallery {
+        width: auto;
+        margin: 0;
+    }
+
+    @media (max-width: 40rem) {
+        .profile {
+            grid-template-columns: auto 1fr;
+            grid-row-gap: 1.5rem;
+        }
+
+        .profile-image {
+            grid-row: 1 / 2;
+        }
+
+        .profile-user-settings {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-gap: 1rem;
+        }
+
+        .profile-edit-btn,
+        .profile-stats,
+        .profile-bio {
+            grid-column: 1 / -1;
+        }
+
+        .profile-user-settings,
+        .profile-edit-btn,
+        .profile-settings-btn,
+        .profile-bio,
+        .profile-stats {
+            margin: 0;
+        }
+    }
+}
+
+/*-- Log-In -- Register -- CSS --*/
+
+iframe {
+    padding-top: 1vh;
+    height: 300;
+}
+
+.Log-in-container {
+    background-color: #4D194D;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.header {
+    margin-top: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #4D194D;
+}
+.set-the-logo {
+    height:150px;
+    width:600px;
+    background-image: url('../assets/img/Artboard_14x.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.set-the-bar-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #4D194D;
+    margin-top: 3vh;
+    height: 15vh;
+    padding: 0 10vw 0 10vw;
+}
+.set-the-bar-moto {
+    font-family: 'Satisfy', cursive;
+    color: white;
+}
+.set-the-bar-intro {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    color: white;
+}
+.input-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    height: 35vh;
+}
+.input-register-info-container {
+    margin-top: 5vh;
+}
+.input-info {
+    margin-bottom: 3rem;
+    font-family: 'Lato', sans-serif;
+    color: #4D194D;
+    background-color: white;
+    border-radius: 70px;
+    width: 80vw;
+    height: 6vh;
+    text-align: center;
+}
+.connect-with-tier-container {
+    margin-top: 3rem;
+    font-family: 'Lato', sans-serif;
+    justify-content: center;
+    display: flex;
+    color: whitesmoke ;
+}
+.tier-logo {
+    background-image: url(https://www.topone.be/wp-content/uploads/2017/01/facebook-icon-preview-1-400x400.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 50px;
+    width: 50px;
+}
+.tier-text {
+    margin-top: 5px;
+}
+.no-account {
+    margin-top: 8vh;
+    font-family: 'Lato', sans-serif;
+    color: black;
+    text-align: center;
+
+}
+.no-account span {
+    color: #006466;
+}
+a {
+    text-decoration: none;
+}
+
+/*-- Dashboard -- CSS --*/
+
+.dashboard-container {
+    background-color: #4D194D;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+
+
+/*-- Searchbar -- CSS --*/
+
+.search-container {
+    display: flex;
+    width: 100%;
+    height: 6%;
+    justify-content:center;
+    align-items: center;
+}
+.set-the-bar-search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.356);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+.icon-mic {
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958668094757298186/unknown.png);
+}
+.icon-loupe {
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958667761184288798/unknown.png);
+}
+.search-input {
+    background-color: #4d194d00;
+    border: none;
+    width: 85%;
+    font-size: 1.5em;
+}
+.search-input::placeholder {
+    font-weight: 400;
+    color: #4D194D;
+
+}
+
+.title {
+    color: #dbdbdb;
+    font-weight: 400;
+    font-family: 'Lato', sans-serif;
+}
+
+
+/*-- Carousel -- CSS --*/
+
+.carousel-general-container {
+    background-color: #4D194D;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: scroll;
+}
+.carousel-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.carousel-container::-webkit-scrollbar {
+      display: none;
+    }
+  
+.carousel-image {
+    border-radius: 30px;
+    background-image: url(https://picsum.photos/200/300) ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 500px;
+    height: 300px;
+}
+.carousel-text-container {
+    width: 95%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.carousel-heart {
+    width: 80px;
+    height: 80px;
+    background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958709188039684096/unknown.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.carousel-rating {
+    width: 500px;
+    height: 50px;
+    
+    /* background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958709656300159046/unknown.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
+    
+}
+
+
+
+.carousel-barname {
+    font-family: 'Lato', sans-serif;
+    color: whitesmoke;
+    width: 500px;
+    height: 50px;
+}
+
+
+/* -- Location - container --*/
+
+.location-general-container {
+    display: flex;
+    font-size: 1.5em;
+    flex-direction: column;
+    color: #dadada;
+}
+.location-container {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}
+.location-logo {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/684/684908.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 70px;
+    width: 55px;
+    margin-right: 20px;
+}
+
+/* RESULTS OF SEARCH */
+.filterby-container {
+    background-color: #006466;
+    display: flex;
+    justify-content: space-between;
+}
+/*--FILTER --*/
+button {
+    font-size:1em;
+    border-radius: 32px;
+    border: none;
+}
+.filter-container{
+    background-color: whitesmoke;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.filter-meters-container {
+    /* border: solid 2px red; */
+    display:flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: space-around;    
+    text-align: center;
+    margin-top: 30px;
+    /* width: 100vw; */ 
+
+}
+
+.container-clear-x{
+    display:flex;
+    justify-content: space-between;
+   
+}
+
+.clear{
+    border: solid 1px #4D194D;
+    color: #4D194D;
+    background-color: transparent;
+    padding: 10px 30px;
+    border-radius: 30px;
+    margin-top:50px;
+    /* text-transform: uppercase; */
+}
+
+.x{
+    height: 30px;
+    width: 30px;
+    margin-top:30px;
+}
+
+.explain-filter-meters {
+    margin-bottom: 30px;
+    
+}
+
+.filter-crowd {
+    
+     padding: 15px; 
+    
+}
+
+.filter-crowd p{
+     
+    font-weight: bold;
+    
+        
+}
+
+    .filter-labels-crowd {
+        display:flex; 
+        justify-content: space-between;
+        margin-top:25px;
+        margin-bottom: 20px;
+    }
+
+.filter-hygiene {
+    /* margin-top: 20px;
+    box-shadow: 5px 5px 50px  grey;
+    border-radius: 30px; */
+     padding: 15px; 
+}
+
+    .filter-hygiene p{
+        font-weight: bold;
+        
+    }
+
+    .filter-labels-hygiene {
+        display:flex; 
+        justify-content: space-between;
+        margin-top:15px;
+    }
+
+.filter-atmosphere {
+    padding:15px;
+    /* box-shadow: 5px 5px 20px black;
+        border-radius: 30px; */
+}
+
+    .filter-atmosphere p{
+        
+        font-weight: bold;
+        
+    }
+    .filter-labels-atmo {
+        display:flex; 
+        justify-content: space-between;
+        margin-top:15px;
+         
+    }
+
+.filter-safety{
+    
+    padding:15px;
+}
+
+    .filter-safety p{        
+        font-weight: bold;
+        
+    }
+
+    .filter-labels-safety {
+        display:flex; 
+        justify-content: space-between;
+        margin-top:15px; 
+    }
+
+    .apply-filter {
+    background-color: #4D194D;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 30px;
+    margin-top:50px;
+
+    }    
+
+/*-- Nav-bar -- CSS --*/
+
+.navigation-tab {
+    width: 100vw;
+    height: 8vh;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+}
+.nav-links {
+    height: 100%;
+    width: 100%;
+}
+.nav-button {
+    display: flex;
+    cursor: pointer;
+    width: 120px;
+    height: 120px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.navigation-explore {
+    background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673304221257778/unknown.png);
+}
+.navigation-review {
+    background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673629183344701/unknown.png);
+}
+.navigation-favorites {
+    background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673629380509706/unknown.png);
+}
+.navigation-profile {
+    background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673629611184128/unknown.png);
+}
+
+/* PRESET CLASSES */
+.mgtop-80px {
+    margin-top:80px;
+}
+.mgtop-40px {
+    margin-top: 40px;
+}
+.mgtop-25px {
+    margin-top: 25px;
+}
+.mgtop-10px {
+    margin-top: 10px;
+}

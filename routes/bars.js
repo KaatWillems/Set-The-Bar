@@ -50,15 +50,15 @@ router.post("/search", async (req, res) => {
         })
         //console.log(bararr)
         // let trendingbars
-        res.render('dashboard',{
-          user: req.user,
-          bars: bararr,
+        res.render('search',{
+          // user: req.user,
+          // bars: bararr,
   
         });
     } else {
-        res.render('dashboard',{
-            user: req.user,
-            bars: bararr,
+        res.render('search',{
+            // user: req.user,
+            // bars: bararr,
     
           });
     }
