@@ -1,14 +1,14 @@
 <div class="review-container">
   <div class="review-left-text">
       <h1 class="review-letsreview">Let's review </h1>
-      <h2 class="bartitle"> Le Tavernier</h2>
+      <h2 class="bartitle"> <%= bar.name %></h2>
       
   </div>
 
   <div class="meters-container">
-  <form action="/reviews/new" method="POST">
+  <form action="/reviews/new/<%= bar._id %>" method="POST">
       <div class="stars">
-        
+       
         <div class="rate">
           <input type="radio" id="star5" name="reviewstars" value="5" />
           <label for="star5" title="text">5 stars</label>
