@@ -18,7 +18,9 @@
       <% bars.forEach((bar) => { %>
       <a href="/bars/show/<%= bar.bar._id %>">
       <div class="carousel-row">
-        <div class="carousel-image" style=`background-image:url(<%= bar.bar.pictureUrl %>)`>
+
+        <div class="carousel-image" style=background-image:url(../static/assets/barimages/<%=Math.round((Math.random()*9)+1)%>.jpg)>
+
   
         </div>
         <div class="carousel-text-container mgtop-10px">
@@ -54,7 +56,7 @@
     </div>
     <div class="carousel-container mgtop-25px">
       <div class="carousel-row">
-        <div class="carousel-image">
+        <div class="carousel-image" style=background-image:url(../static/assets/barimages/<%=Math.round((Math.random()*9)+1)%>.jpg)>
   
         </div>
         <div class="carousel-text-container mgtop-10px">
@@ -66,7 +68,7 @@
         </div>
       </div>
       <div class="carousel-row">
-        <div class="carousel-image">
+        <div class="carousel-image" style=background-image:url(../static/assets/barimages/<%=Math.round((Math.random()*9)+1)%>.jpg)>
   
         </div>
         <div class="carousel-text-container">
@@ -78,7 +80,7 @@
         </div>
       </div>
       <div class="carousel-row">
-        <div class="carousel-image">
+        <div class="carousel-image" style=background-image:url(../static/assets/barimages/<%=Math.round((Math.random()*9)+1)%>.jpg)>
   
         </div>
         <div class="carousel-text-container mgtop-10px">
@@ -97,7 +99,7 @@
 
 
 
-<div class="location-general-container mgtop-80px" >
+<div class="location-general-container mgtop-80px" style="display: none;" >
   <div class="location-container">
     <div class="location-logo"></div>
     <div class="location-text">My Location</div>
