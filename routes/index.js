@@ -36,6 +36,10 @@ router.get('/favorites', (req,res)=>{
 //   res.render('bardetail');
 // })
 
+router.get('/profiles', (req,res)=>{
+  res.render('profile.ejs', { layout : 'profile.ejs'});
+})
+
 
 
 //diogo 
