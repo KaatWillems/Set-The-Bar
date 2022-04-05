@@ -29,7 +29,7 @@ body{
     font-family: 'Lato', sans-serif;
    
     /* width: 100vw; */
-    /* height: 100vh; */
+    height: 130vh;
     
     display: flex;
     flex-direction: column;
@@ -80,7 +80,7 @@ body{
         margin-top: 30px;
         
     }
-/* SHOW METERS for detail bar(review meters below) */
+/* SHOW METERS READONLY /// REVIEW METERS ARE BELOW */
 .show-meters-container {
     /* border: solid 2px red; */
     display:flex;
@@ -96,6 +96,8 @@ body{
    
 
 }
+
+
 
 .explain-meters {
     font-size: 3rem;
@@ -258,11 +260,52 @@ body{
 
 }
 
-.explain-meters {
-    font-size: 3rem;
-  margin-bottom: 30px;
-    
+/* enter the stars in the review: */
+
+.stars {
+    display:flex;
+    justify-content: center;
 }
+
+.rate {
+    
+    height: 80px;
+    margin-top:20px;
+   
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:50px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+
+
 
 .crowd {
     /* margin-top: 20px;  

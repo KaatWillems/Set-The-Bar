@@ -14,7 +14,7 @@ const Bar = require("../models/bar").Bar
 
 //login page set the bar 
 router.get('/', (req,res)=>{  
-    res.render('welcome');  
+    res.render('register');  
 })
 
 //register page
@@ -31,9 +31,13 @@ router.get('/favorites', (req,res)=>{
   res.render('favoritebars');
 })
 //review page //THESE LINES STILL NEED TO BE ADDED ON MASTER 
-router.get('/show', (req,res)=>{
-  res.render('bardetail');
+router.get('/favorites', (req,res)=>{
+  res.render('favoritebars');
 })
+//detailed bar page//THESE LINES STILL NEED TO BE ADDED ON MASTER 
+// router.get('/show', (req,res)=>{
+//   res.render('bardetail');
+// })
 
 
 
@@ -60,9 +64,9 @@ router.get('/show', (req,res)=>{
 const getStars = (bar) => { 
   let rating = bar.ratings;
   ratingarr = rating.split(',')
-  console.log(ratingarr)
+  //console.log(ratingarr)
   starNbr = parseInt(ratingarr[0])
-  console.log(starNbr)
+  //console.log(starNbr)
   let finalArr = []
   for (let i = 0; i < starNbr; i++) {
     finalArr.push('*')

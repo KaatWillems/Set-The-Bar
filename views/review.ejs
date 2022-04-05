@@ -2,14 +2,32 @@
   <div class="review-left-text">
       <h1 class="review-letsreview">Let's review </h1>
       <h2 class="bartitle"> Le Tavernier</h2>
-      <div class="review-rating"></div>
+      
   </div>
 
   <div class="meters-container">
-  <form>
+  <form action="/reviews/new" method="POST">
+      <div class="stars">
+        
+        <div class="rate">
+          <input type="radio" id="star5" name="reviewstars" value="5" />
+          <label for="star5" title="text">5 stars</label>
+          <input type="radio" id="star4" name="reviewstars" value="4" />
+          <label for="star4" title="text">4 stars</label>
+          <input type="radio" id="star3" name="reviewstars" value="3" />
+          <label for="star3" title="text">3 stars</label>
+          <input type="radio" id="star2" name="reviewstars" value="2" />
+          <label for="star2" title="text">2 stars</label>
+          <input type="radio" id="star1" name="reviewstars" value="1" />
+          <label for="star1" title="text">1 star</label>
+        </div>
+
+
+
+      </div>
       <div class="crowd"> 
           <p>Crowd</p>
-          <input type="range" min="1" max="9" value="5" class="slider">
+          <input type="range" min="1" max="9" value="5" class="slider" name="reviewcrowd">
   
          <div class="labels-crowd"> 
               <span>Pretty quiet</span> <span>Room for more</span> <span>Full house</span>
@@ -18,7 +36,7 @@
   
       <div class="hygiene"> 
         <p>Hygiene</p>
-        <input type="range" min="1" max="9"  class="slider">
+        <input type="range" min="1" max="9"  class="slider" name="reviewhygiene">
         <div class="labels-hygiene">
             <span>As clean as it gets</span> <span>Decent</span> <span>Everything's sticky </span>
           </div>
@@ -26,24 +44,24 @@
   
       <div class="atmosphere"> 
         <p>Atmosphere</p>
-        <input type="range" min="1" max="9" value="5" class="slider">
+        <input type="range" min="1" max="9" value="5" class="slider" name="reviewatmosphere">
         <div class="labels-atmo">
           <span>Dancing</span> <span>Chatting</span></div>
       </div> 
   
       <div class="safety"> 
         <p>Safety</p>
-        <input type="range" min="1" max="9" value="5" class="slider">
+        <input type="range" min="1" max="9" value="5" class="slider" name="reviewsafety">
        <div class="labels-safety"> 
          <span>I feel safe</span> <span>Creep alert</span></div>
       </div> 
   
       <div class="review-comments">
         <p>Comments</p>
-        <input type="text" placeholder="Leave a comment">
+        <input type="text" placeholder="Leave a comment" name="reviewcomment">
       </div>
 
-      <button class="submitbtn-review" >Submit review</button>
+      <button type="submit" class="submitbtn-review" >Submit review</button>
   </form>
 
 </div>

@@ -5,7 +5,7 @@ const ProfileSchema = require("./profile").ProfileSchema
 const ReviewSchema  = new mongoose.Schema({
   rating :{
       type  : Number,
-      required : true
+      default : 0
   },
   crowd :{
       type  : Number,
@@ -24,7 +24,7 @@ const ReviewSchema  = new mongoose.Schema({
     required : true
   },
   comment :{
-    type  : Number,
+    type  : String,
   },
   date :{
     type : Date,
