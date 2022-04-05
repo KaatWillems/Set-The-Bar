@@ -83,14 +83,15 @@ router.post("/search", ensureAuthenticated, async (req, res) => {
    
   })
 
-  router.get("/show/:id", async (req, res) => {
+  router.get("/show/:id",ensureAuthenticated,  async (req, res) => {
     const barquery = await Bar.findById(req.params.id)
     //here we should still add populate reviews when we have reviews in the DB  (.populate.Reviews)
    
     //console.log(barquery)
 
     res.render('bardetail', {
-      bar: barquery
+      bar: barquery,
+      user: req.user
     })
   })
 

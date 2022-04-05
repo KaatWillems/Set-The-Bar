@@ -4,6 +4,7 @@ const Profile = require("../models/profile").Profile;
 const User = require("../models/user")
 const Review = require("../models/review").Review
 const Bar = require("../models/bar").Bar
+const {ensureAuthenticated} = require('../config/auth')
 
 
   
@@ -34,13 +35,14 @@ const Bar = require("../models/bar").Bar
   
   })
 
-  router.get("/new/:id", async (req, res) => {
+  router.get("/new/:id",ensureAuthenticated, async (req, res) => {
     const reviewquery = await Bar.findById(req.params.id)
     //here we should still add populate reviews when we have reviews in the DB  (.populate.Reviews)
    
     console.log(reviewquery, "console log reviewquery in review.js")
 
     res.render('review', {
+      user: req.user,
       bar: reviewquery
     })
   })

@@ -91,10 +91,6 @@ const getStars = (bar) => {
 router.get('/dashboard',ensureAuthenticated, async (req,res)=>{
     if(!req.user.Profile){
 
-    
-      
-
-
       bararr = []
 
       let bars = await Bar.find()

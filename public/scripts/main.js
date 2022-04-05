@@ -9,7 +9,10 @@ setTheLogoPurple = document.querySelector('.set-the-logo-purple'),
 filterByBtn = document.querySelector('.filterby-btn'),
 filterByContainer = document.querySelector('.filterby-container'),
 filterContainer = document.querySelector('.filter-container'),
-xBtn = document.querySelector('.x')
+xBtn = document.querySelector('.x'),
+carouselImages = document.querySelectorAll('.carousel-image'),
+reviewContainer = document.querySelector('.review-container'),
+resultsContainer = document.querySelector('.results-container')
 
 
 if (searchInput != undefined) {
@@ -25,11 +28,12 @@ searchInput.addEventListener('blur',() => {
 })
 }
 
-if (xBtn !== undefined) {
+if (xBtn != undefined) {
     xBtn.addEventListener('click',() => {
         searchContainer.style.display = 'flex'
         filterByContainer.style.display = 'flex'
         filterContainer.style.display = 'none'
+        resultsContainer.style.display = 'flex'
         body.style.backgroundColor = '#4d194d'
         setTheLogoWhite.style.display = 'flex'
         setTheLogoPurple.style.display = 'none'
@@ -41,8 +45,16 @@ if (filterByBtn != undefined) {
         searchContainer.style.display = 'none'
         filterByContainer.style.display = 'none'
         filterContainer.style.display = 'flex'
+        resultsContainer.style.display = 'none'
         body.style.backgroundColor = 'whitesmoke'
         setTheLogoWhite.style.display = 'none'
         setTheLogoPurple.style.display = 'block'
     })
+}
+
+
+if (reviewContainer) {
+    body.style.backgroundColor = 'whitesmoke'
+    setTheLogoWhite.style.display = 'none'
+    setTheLogoPurple.style.display = 'block'
 }
