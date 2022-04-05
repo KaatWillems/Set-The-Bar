@@ -23,9 +23,9 @@ router.get('/register', (req,res)=>{
 })
 
 //review page //THESE LINES STILL NEED TO BE ADDED ON MASTER 
-router.get('/review', (req,res)=>{
-  res.render('review');
-})
+// router.get('/review', (req,res)=>{
+//   res.render('review');
+// })
 
 //review page //THESE LINES STILL NEED TO BE ADDED ON MASTER 
 router.get('/favorites', (req,res)=>{
