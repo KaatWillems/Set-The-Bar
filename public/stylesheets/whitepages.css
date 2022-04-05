@@ -1,523 +1,481 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Satisfy&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Satisfy&display=swap");
 
 /* colors: */
 :root {
---purple-bg: #4D194D;
---whitesmoke-bg: whitesmoke;
---nav-bg: #FFFFFF;
---font-black: black;
+  --purple-bg: #4d194d;
+  --whitesmoke-bg: whitesmoke;
+  --nav-bg: #ffffff;
+  --font-black: black;
 }
 
 /* review page */
 
-body{
-    box-sizing: border-box ;
-    
-    margin: 0px;
-    padding: 0px ;
-    font-family: 'Lato', sans-serif;
-    background-color: var(--whitesmoke-bg);
-    color: var(--font-black);
-    overflow: auto scroll ;
-    min-height: 100vh ;
+body {
+  box-sizing: border-box;
+
+  margin: 0px;
+  padding: 0px;
+  font-family: "Lato", sans-serif;
+  background-color: var(--whitesmoke-bg);
+  color: var(--font-black);
+  overflow: auto scroll;
+  min-height: 100vh;
 }
 
-.review-container{  
-    /* border:solid 2px purple;  */
-    
-    font-family: 'Lato', sans-serif;
-   
-    /* width: 100vw; */
-    height: 130vh;
-    
-    display: flex;
-    flex-direction: column;
-    /* align-items: space-between; */
-    
-    
+.review-container {
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-bottom: 80px;
+  /* align-items: space-between; */
 }
 
 /* text on the left */
 .review-left-text {
-    /* border: solid 3px green; */
-    display:flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top:150px !important;
-    margin-left:70px !important;
-    height: fit-content;
-    
-    
+  /* border: solid 3px green; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: fit-content;
 }
 
 .img-bar {
-    background-image: url(https://picsum.photos/200/300) ;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 800px ;
-    height: 400px;
+  background-image: url(https://picsum.photos/200/300);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 600px;
 }
 
-    .review-letsreview{
-        /* border:solid black 2px; */
-    text-transform: uppercase;
-    font-size: 3.5rem;
-    }
+.review-letsreview {
+  /* border:solid black 2px; */
+  text-transform: uppercase;
+  font-size: 3.5rem;
+}
 
-    .bartitle {
-        margin-top:20px ;
-        font-size: 7rem;
-    }
+.bartitle {
+  margin-top: 20px;
+  font-size: 5rem;
+}
 
-    .review-rating{
-        background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958709656300159046/unknown.png);
-        height: 50px;
-       width: 50%;
-        background-size: contain;
-        background-repeat: no-repeat;
-        margin-top: 30px;
-        
-    }
+.review-rating {
+  background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958709656300159046/unknown.png);
+  height: 50px;
+  width: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 30px;
+}
 /* SHOW METERS READONLY (DETAILED BAR PAGE) /// REVIEW METERS FOR THE REVIEW PAGE ARE BELOW */
 .show-meters-container {
-    /* border: solid 2px red; */
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    
-    justify-content: space-around;
-    
-    text-align: center;
+  /* border: solid 2px red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    margin-top: 30px;
-    /* width: 100vw; */
-   
+  justify-content: space-around;
 
+  text-align: center;
+
+  margin-top: 30px;
+  /* width: 100vw; */
 }
 
-
-
 .explain-meters {
-    font-size: 3rem;
+  font-size: 3rem;
   margin-bottom: 30px;
-    
 }
 
 .btn-add-review {
-    background-color: #4D194D;
-    color: white;
-    padding: 10px 30px;
-    border-radius: 30px;
-    margin-top:50px;
+  background-color: #4d194d;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 30px;
+  margin-top: 50px;
 }
 
 .show-crowd {
-    /* margin-top: 20px;  
+  /* margin-top: 20px;  
     box-shadow: 5px 5px 50px  grey;
     border-radius: 30px; */
-     padding: 15px; 
-    
+  padding: 15px;
 }
 
-.show-crowd p{
-     
-    font-size:4.5rem;
-    font-weight: bold;
-    
-        
+.show-crowd p {
+  font-size: 4.5rem;
+  font-weight: bold;
 }
 
-    .show-labels-crowd {
-        display:flex; 
-        justify-content: space-between;
-        margin-top:25px;
-        margin-bottom: 20px;
-        font-size: 3.5rem;    
-    }
+.show-labels-crowd {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  font-size: 3.5rem;
+}
 
 .show-hygiene {
-    /* margin-top: 20px;
+  /* margin-top: 20px;
     box-shadow: 5px 5px 50px  grey;
     border-radius: 30px; */
-     padding: 15px; 
+  padding: 15px;
 }
 
-    .show-hygiene p{
-        font-size:4.5rem;
-        font-weight: bold;
-        
-    }
+.show-hygiene p {
+  font-size: 4.5rem;
+  font-weight: bold;
+}
 
-    .show-labels-hygiene {
-        display:flex; 
-        justify-content: space-between;
-        margin-top:15px;
-        font-size: 3.5rem;    
-    }
+.show-labels-hygiene {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-size: 3.5rem;
+}
 
 .show-atmosphere {
-    padding:15px;
-    /* box-shadow: 5px 5px 20px black;
+  padding: 15px;
+  /* box-shadow: 5px 5px 20px black;
         border-radius: 30px; */
 }
 
-    .show-atmosphere p{
-        
-        font-size:4.5rem;
-        font-weight: bold;
-        
-    }
-    .show-labels-atmo {
-        display:flex; 
-        justify-content: space-between;
-        margin-top:15px;
-        font-size: 3.5rem;  
-         
-    }
-
-.show-safety{
-    /* box-shadow: 5px 5px 20px black;
-        border-radius: 30px; */
-    padding:15px;
+.show-atmosphere p {
+  font-size: 4.5rem;
+  font-weight: bold;
+}
+.show-labels-atmo {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-size: 3.5rem;
 }
 
-    .show-safety p{        
-        font-size:4.5rem;
-        font-weight: bold;
-        
-    }
+.show-safety {
+  /* box-shadow: 5px 5px 20px black;
+        border-radius: 30px; */
+  padding: 15px;
+}
 
-    .show-labels-safety {
-        display:flex; 
-        justify-content: space-between;
-        margin-top:15px;
-        font-size: 3.5rem;    
-    }
+.show-safety p {
+  font-size: 4.5rem;
+  font-weight: bold;
+}
 
-
+.show-labels-safety {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-size: 3.5rem;
+}
 
 /* slider bars: */
 
 .show-slider input[type="range"] {
-    -webkit-appearance: none !important;
-    width: 800px;
-    height: 35px;
-    margin-top: 30px;
+  -webkit-appearance: none !important;
+  width: 800px;
+  height: 35px;
+  margin-top: 30px;
 
-    /* color bar: */
-    background: -webkit-linear-gradient(90deg, rgb(183, 87, 183), rgb(77, 25, 77));
-    background: linear-gradient(90deg, rgb(183, 87, 183), rgb(77, 25, 77));
+  /* color bar: */
+  background: -webkit-linear-gradient(
+    90deg,
+    rgb(183, 87, 183),
+    rgb(77, 25, 77)
+  );
+  background: linear-gradient(90deg, rgb(183, 87, 183), rgb(77, 25, 77));
 
-    border: 1px solid var(--purple-bg);
-    border-radius: 30px;    
-    box-shadow: 5px 5px 20px var(--purple-bg);
-    transition: all 0.3s ease;
-  }
+  border: 1px solid var(--purple-bg);
+  border-radius: 30px;
+  box-shadow: 5px 5px 20px var(--purple-bg);
+  transition: all 0.3s ease;
+}
 
-  /* hover for desktop */
-  .show-slider input[type="range"]:hover {
-    box-shadow: 5px 5px 20px var(--purple-bg);
-  }
-  
-  /* when slided mobile*/
-  .show-slider input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none !important;
-    width: 55px;
-    height: 55px;
-    background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/953976252727967744/logo_4.5.png);
-    background-color: var(--purple-bg);
-    background-size: contain;
-    border-radius: 30px;
-    /* box-shadow: 0px 0px 3px #3c6d59; */
-    cursor: pointer;
-    transition: all 0.5s ease;
-  }
-  /* input[type="range"]::-webkit-slider-thumb:hover {
+/* hover for desktop */
+.show-slider input[type="range"]:hover {
+  box-shadow: 5px 5px 20px var(--purple-bg);
+}
+
+/* when slided mobile*/
+.show-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  width: 55px;
+  height: 55px;
+  background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/953976252727967744/logo_4.5.png);
+  background-color: var(--purple-bg);
+  background-size: contain;
+  border-radius: 30px;
+  /* box-shadow: 0px 0px 3px #3c6d59; */
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+/* input[type="range"]::-webkit-slider-thumb:hover {
     background-color: #457d66;
   }
   input[type="range"]::-webkit-slider-thumb:active {
     box-shadow: 0px 0px 1px #3c6d59;
   } */
-  
+
 .show-about {
-    font-size: 3.5rem;
-    margin-top: 50px;
-    text-align: left;
-    margin-left:70px;
-    margin-right:70px;
+  font-size: 3.5rem;
+  margin-top: 50px;
+  text-align: left;
+  margin-left: 70px;
+  margin-right: 70px;
 }
-
-
 
 /* REVIEW METERS  on review pages*/
 .meters-container {
-    /* border: solid 2px red; */
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    
-    justify-content: space-around;
-    
-    text-align: center;
+  /* border: solid 2px red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    margin-top: 30px;
-    /* width: 100vw; */
-   
+  justify-content: space-around;
 
+  text-align: center;
+
+  margin-top: 30px;
+  /* width: 100vw; */
 }
 
 /* enter the stars in the review: */
 
 .stars {
-    display:flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .rate {
-    
-    height: 80px;
-    margin-top:20px;
-   
+  height: 80px;
+  margin-top: 20px;
 }
 .rate:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
+  position: absolute;
+  top: -9999px;
 }
 .rate:not(:checked) > label {
-    float:right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:50px;
-    color:#ccc;
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 50px;
+  color: #ccc;
 }
 .rate:not(:checked) > label:before {
-    content: '★ ';
+  content: "★ ";
 }
 .rate > input:checked ~ label {
-    color: #ffc700;    
+  color: #ffc700;
 }
 .rate:not(:checked) > label:hover,
 .rate:not(:checked) > label:hover ~ label {
-    color: #deb217;  
+  color: #deb217;
 }
 .rate > input:checked + label:hover,
 .rate > input:checked + label:hover ~ label,
 .rate > input:checked ~ label:hover,
 .rate > input:checked ~ label:hover ~ label,
 .rate > label:hover ~ input:checked ~ label {
-    color: #c59b08;
+  color: #c59b08;
 }
-
-
-
 
 .crowd {
-    /* margin-top: 20px;  
+  /* margin-top: 20px;  
     box-shadow: 5px 5px 50px  grey;
     border-radius: 30px; */
-     padding: 15px; 
-    
+  padding: 15px;
 }
 
-.crowd p{
-     
-    font-size:4.5rem;
-    font-weight: bold;
-    
-        
+.crowd p {
+  font-size: 4.5rem;
+  font-weight: bold;
 }
 
-    .labels-crowd {
-        display:flex; 
-        justify-content: space-between;
-        margin-top:25px;
-        margin-bottom: 20px;
-        font-size: 3.5rem;    
-    }
+.labels-crowd {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  font-size: 3.5rem;
+}
 
 .hygiene {
-    /* margin-top: 20px;
+  /* margin-top: 20px;
     box-shadow: 5px 5px 50px  grey;
     border-radius: 30px; */
-     padding: 15px; 
+  padding: 15px;
 }
 
-    .hygiene p{
-        font-size:4.5rem;
-        font-weight: bold;
-        
-    }
+.hygiene p {
+  font-size: 4.5rem;
+  font-weight: bold;
+}
 
-    .labels-hygiene {
-        display:flex; 
-        justify-content: space-between;
-        margin-top:15px;
-        font-size: 3.5rem;    
-    }
+.labels-hygiene {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-size: 3.5rem;
+}
 
 .atmosphere {
-    padding:15px;
-    /* box-shadow: 5px 5px 20px black;
+  padding: 15px;
+  /* box-shadow: 5px 5px 20px black;
         border-radius: 30px; */
 }
 
-    .atmosphere p{
-        
-        font-size:4.5rem;
-        font-weight: bold;
-        
-    }
-    .labels-atmo {
-        display:flex; 
-        justify-content: space-between;
-        margin-top:15px;
-        font-size: 3.5rem;  
-         
-    }
-
-.safety{
-    /* box-shadow: 5px 5px 20px black;
-        border-radius: 30px; */
-    padding:15px;
+.atmosphere p {
+  font-size: 4.5rem;
+  font-weight: bold;
+}
+.labels-atmo {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-size: 3.5rem;
 }
 
-    .safety p{        
-        font-size:4.5rem;
-        font-weight: bold;
-        
-    }
+.safety {
+  /* box-shadow: 5px 5px 20px black;
+        border-radius: 30px; */
+  padding: 15px;
+}
 
-    .labels-safety {
-        display:flex; 
-        justify-content: space-between;
-        margin-top:15px;
-        font-size: 3.5rem;    
-    }
+.safety p {
+  font-size: 4.5rem;
+  font-weight: bold;
+}
+
+.labels-safety {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-size: 3.5rem;
+}
 
 .review-comments {
-    padding:15px;
-}    
+  padding: 15px;
+}
 
-    .review-comments p {
-        font-size:4.5rem;
-        font-weight: bold;
-    }
-    .review-comments input {
-       width: 800px;
-       height: 100px;
-       border-radius: 30px;
-       border: solid 1px var(--purple-bg);
-       font-size: 3rem;
-       margin-top: 30px;
-    }   
+.review-comments p {
+  font-size: 4.5rem;
+  font-weight: bold;
+}
+.review-comments input {
+  width: 800px;
+  height: 100px;
+  border-radius: 30px;
+  border: solid 1px var(--purple-bg);
+  font-size: 3rem;
+  margin-top: 30px;
+}
 
 .submitbtn-review {
-    background-color: var(--purple-bg);
-    color: white;
-    padding: 10px 30px;
-    border-radius: 30px;
-    font-size: 3.5rem;
-    margin-top:50px;
-    /* box-shadow: 5px 5px 20px var(--purple-bg) */
+  background-color: var(--purple-bg);
+  color: white;
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-size: 3.5rem;
+  margin-top: 50px;
+  /* box-shadow: 5px 5px 20px var(--purple-bg) */
 }
 
 .submitbtn-review :hover {
-     /* box-shadow: 5px 5px 20px var(--purple-bg) */
-    
-    
+  /* box-shadow: 5px 5px 20px var(--purple-bg) */
 }
 
 /* slider bars: */
 
 input[type="range"] {
-    -webkit-appearance: none !important;
-    width: 800px;
-    height: 35px;
-    margin-top: 30px;
+  -webkit-appearance: none !important;
+  width: 800px;
+  height: 35px;
+  margin-top: 30px;
 
-    /* color bar: */
-    background: -webkit-linear-gradient(90deg, rgb(183, 87, 183), rgb(77, 25, 77));
-    background: linear-gradient(90deg, rgb(183, 87, 183), rgb(77, 25, 77));
+  /* color bar: */
+  background: -webkit-linear-gradient(
+    90deg,
+    rgb(183, 87, 183),
+    rgb(77, 25, 77)
+  );
+  background: linear-gradient(90deg, rgb(183, 87, 183), rgb(77, 25, 77));
 
-    border: 1px solid var(--purple-bg);
-    border-radius: 30px;    
-    box-shadow: 5px 5px 20px var(--purple-bg);
-    transition: all 0.3s ease;
-  }
+  border: 1px solid var(--purple-bg);
+  border-radius: 30px;
+  box-shadow: 5px 5px 20px var(--purple-bg);
+  transition: all 0.3s ease;
+}
 
-  /* hover for desktop */
-  input[type="range"]:hover {
-    box-shadow: 5px 5px 20px var(--purple-bg);
-  }
-  
-  /* when slided mobile*/
-  input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none !important;
-    width: 55px;
-    height: 55px;
-    background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/953976252727967744/logo_4.5.png);
-    background-color: var(--purple-bg);
-    background-size: contain;
-    border-radius: 30px;
-    /* box-shadow: 0px 0px 3px #3c6d59; */
-    cursor: pointer;
-    transition: all 0.5s ease;
-  }
-  /* input[type="range"]::-webkit-slider-thumb:hover {
+/* hover for desktop */
+input[type="range"]:hover {
+  box-shadow: 5px 5px 20px var(--purple-bg);
+}
+
+/* when slided mobile*/
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  width: 55px;
+  height: 55px;
+  background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/953976252727967744/logo_4.5.png);
+  background-color: var(--purple-bg);
+  background-size: contain;
+  border-radius: 30px;
+  /* box-shadow: 0px 0px 3px #3c6d59; */
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+/* input[type="range"]::-webkit-slider-thumb:hover {
     background-color: #457d66;
   }
   input[type="range"]::-webkit-slider-thumb:active {
     box-shadow: 0px 0px 1px #3c6d59;
   } */
-  
+
 /*-- Nav-bar -- CSS --*/
 
 .navigation-tab-review {
-    /* border: solid 1px blue; */
-    width: 100%;
-    height: fit-content; 
-    background-color: var(--nav-bg) ;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
+  /* border: solid 1px blue; */
+  width: 100%;
+  height: fit-content;
+  background-color: var(--nav-bg);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
 }
 .navigation-explore {
-    width: 200px;
-    height: 200px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673304221257778/unknown.png);
-   
-    
+  width: 200px;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673304221257778/unknown.png);
 }
 .navigation-review {
-    width: 200px;
-    height: 200px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673629183344701/unknown.png);
+  width: 200px;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673629183344701/unknown.png);
 }
 .navigation-favorites {
-    width: 200px;
-    height: 200px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673629380509706/unknown.png);
+  width: 200px;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673629380509706/unknown.png);
 }
 .navigation-profile {
-    width: 200px;
-    height: 200px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673629611184128/unknown.png);
+  width: 200px;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673629611184128/unknown.png);
 }
