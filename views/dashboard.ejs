@@ -1,54 +1,39 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="dashboard-container">
-  <div class="set-the-bar-title">
-    <iframe src="https://ntmaker.gfto.ru/newneontexten/?image_height=400&image_width=1200&image_font_shadow_width=0&image_font_size=150&image_background_color=4D194D&image_text_color=FFFFFF&image_font_shadow_color=6A6A6A&image_url=&image_text=Set The Bar&image_font_family=Metropolis&" frameborder='no' scrolling='no' width="1200" height="400"></iframe>
-  </div>
-  <div class="set-the-bar-search-bar">
-    <div class="icon-loupe"></div>
-    <form action="/bars/search" method="POST" id="search_bar">
-    <input  type="text" placeholder="Search Location" class="search-input" name="userquery">
-  </form>
-    <div class="icon-mic"></div>  
-  </div>
+<div class="search-container mgtop-80px">
+<div class="set-the-bar-search-bar">
+  <div class="icon-loupe"></div>
+  <form action="/bars/search" method="POST" id="search_bar">
+  <input  type="text" placeholder="Search Location" class="search-input" name="userquery">
+</form>
+  <div class="icon-mic"></div>  
+</div>
+</div>
+<div class="dashboard-container mgtop-80px">
+  
  <div class="carousel-general-container">
     <div class="title-container">
       <h2 class="title">Trending Bars</h2>
     </div>
-    <div class="carousel-container">
+    <div class="carousel-container mgtop-25px">
   
       <% bars.forEach((bar) => { %>
-  
+      <a href="/bars/show/<%= bar.bar._id %>">
       <div class="carousel-row">
-        <div class="carousel-image" style="background-image:url(<%= bar.bar.pictureUrl%>)">
+        <div class="carousel-image" style=`background-image:url(<% bar.bar.pictureUrl %>)`>
   
         </div>
-        <div class="carousel-text-container">
-          <div class="carousel-text">
+        <div class="carousel-text-container mgtop-10px">
+          <div class="carousel-text ">
             <div class="carousel-barname"><%= bar.bar.name %></div>
             <div class="carousel-rating">
             
             <span class=stars> 
               <% bar.barrating.forEach((rating) => { %>
                 <% if(rating === "*"){ %>
-                  <i class="fa fa-star" aria-hidden="true" style="color: gold; font-size: 5rem;"></i>
+                  <i class="fa fa-star" aria-hidden="true" style="color: gold; font-size: 2.5rem;"></i>
                 <% } else if (rating === "/") { %>
-                  <i class="fa fa-star-half-o" aria-hidden="true" style="color: gold; font-size: 5rem;"></i>
+                  <i class="fa fa-star-half-o" aria-hidden="true" style="color: gold; font-size: 2.5rem;"></i>
                 <% } else { %>
-                  <i class="fa fa-star-o" aria-hidden="true" style="color: gold; font-size: 5rem;"></i>                
+                  <i class="fa fa-star-o" aria-hidden="true" style="color: gold; font-size: 2.5rem;"></i>                
                 <% } %>
               <% }) %>
             </span>
@@ -57,22 +42,23 @@
           <div class="carousel-heart"></div>
         </div>
       </div>
+    </a>
   
       <% }) %>
   
   
   
     </div>
-    <div class="title-container">
+    <div class="title-container mgtop-40px">
       <h2 class="title">Safest Bars</h2>
     </div>
-    <div class="carousel-container">
+    <div class="carousel-container mgtop-25px">
       <div class="carousel-row">
         <div class="carousel-image">
   
         </div>
-        <div class="carousel-text-container">
-          <div class="carousel-text">
+        <div class="carousel-text-container mgtop-10px">
+          <div class="carousel-text ">
             <div class="carousel-barname">Le tavernier</div>
             <div class="carousel-rating"></div>
           </div>
@@ -84,7 +70,7 @@
   
         </div>
         <div class="carousel-text-container">
-          <div class="carousel-text">
+          <div class="carousel-text mgtop-10px">
             <div class="carousel-barname">Le tavernier</div>
             <div class="carousel-rating"></div>
           </div>
@@ -95,7 +81,7 @@
         <div class="carousel-image">
   
         </div>
-        <div class="carousel-text-container">
+        <div class="carousel-text-container mgtop-10px">
           <div class="carousel-text">
             <div class="carousel-barname">Le tavernier</div>
             <div class="carousel-rating"></div>
@@ -106,117 +92,47 @@
   
     </div>
  </div>
-  <div class="location-general-container">
-    <div class="my-location-container">
-      <div class="my-location-logo"></div>
-      <div class="my-location-text">My Location</div>
-    </div>
-    <div class="title-container">
-      <h2 class="title">Popular Locations</h2>
-    </div>
-    <div class="location-container">
-      <div class="location-logo"></div>
-      <div class="location-text">SomeWhereNearMe</div>
-    </div>
-    <div class="location-container">
-      <div class="location-logo"></div>
-      <div class="location-text">SomeWhereNearMe</div>
-    </div>
-    <div class="location-container">
-      <div class="location-logo"></div>
-      <div class="location-text">SomeWhereNearMe</div>
-    </div>
-    <div class="location-container">
-      <div class="location-logo"></div>
-      <div class="location-text">SomeWhereNearMe</div>
-    </div>
-    <div class="location-container">
-      <div class="location-logo"></div>
-      <div class="location-text">SomeWhereNearMe</div>
-    </div>
-    <div class="location-container">
-      <div class="location-logo"></div>
-      <div class="location-text">SomeWhereNearMe</div>
-    </div>
+  
+</div>
 
+
+
+<div class="location-general-container mgtop-80px" >
+  <div class="location-container">
+    <div class="location-logo"></div>
+    <div class="location-text">My Location</div>
   </div>
-
-
-  <div class="navigation-tab">
-    <div class="navigation-explore"></div>
-    <div class="navigation-review"></div>
-    <div class="navigation-favorites"></div>
-    <div class="navigation-profile"></div>
+  <div class="popular-locations mgtop-40px">
+    <h2 class="title">Popular Locations</h2>
   </div>
-
-
-  <div class="filter-container">
-    <div class="set-the-bar-title">
-      <iframe src="https://ntmaker.gfto.ru/newneontexten/?image_height=400&image_width=1200&image_font_shadow_width=0&image_font_size=150&image_background_color=ffff&image_text_color=FFFFFF&image_font_shadow_color=6A6A6A&image_url=&image_text=Set The Bar&image_font_family=Metropolis&" frameborder='no' scrolling='no' width="1200" height="400" class="logowhite"></iframe>
-    </div>
-
-    <div class="container-clear-x">
-      <button class="clear">Clear all</button>
-
-      <div class="x"> X </div>
-
-    </div>
-
-    <div class="filter-meters-container">
-      <form>
-
-        <div class="explain-filter-meters">
-          What are you looking for?
-        </div>
-
-        <div class="stars">stars to add</div>
-          <div class="filter-crowd"> 
-              <p>Crowd</p>
-              <input type="range" min="1" max="9" value="5" class="filter-slider">
-      
-             <div class="filter-labels-crowd"> 
-                  <span>Pretty quiet</span> 
-                  <span>Room for more</span> 
-                  <span>Full house</span>
-              </div>
-          </div> 
-      
-          <div class="filter-hygiene"> 
-            <p>Hygiene</p>
-            <input type="range" min="1" max="9"  class="filter-slider">
-            <div class="filter-labels-hygiene">
-                <span>Clean</span> 
-                <span>Decent</span> <span>Unimportant</span>
-              </div>
-           </div> 
-      
-          <div class="filter-atmosphere"> 
-            <p>Atmosphere</p>
-            <input type="range" min="1" max="9" value="5" class="filter-slider">
-            <div class="filter-labels-atmo">
-              <span>Dancing</span> <span>Chatting</span></div>
-          </div> 
-      
-          <div class="filter-safety"> 
-            <p>Safety</p>
-            <input type="range" min="1" max="9" value="5" class="filter-slider">
-           <div class="filter-labels-safety"> 
-             <span>People feel safe</span> <span>Unimportant</span></div>
-          </div> 
-
-          
-      
-    
-          <button class="apply-filter" >Apply filters</button>
-      </form>
-
-
-
+  <div class="location-container">
+    <div class="location-logo"></div>
+    <div class="location-text">SomeWhereNearMe</div>
+  </div>
+  <div class="location-container">
+    <div class="location-logo"></div>
+    <div class="location-text">SomeWhereNearMe</div>
+  </div>
+  <div class="location-container">
+    <div class="location-logo"></div>
+    <div class="location-text">SomeWhereNearMe</div>
+  </div>
+  <div class="location-container">
+    <div class="location-logo"></div>
+    <div class="location-text">SomeWhereNearMe</div>
+  </div>
+  <div class="location-container">
+    <div class="location-logo"></div>
+    <div class="location-text">SomeWhereNearMe</div>
+  </div>
+  <div class="location-container">
+    <div class="location-logo"></div>
+    <div class="location-text">SomeWhereNearMe</div>
   </div>
 
 </div>
 
-<script src="static/scripts/searchProfile.js"></script>
+<!-- <script src="static/scripts/searchProfile.js"></script> -->
 
 
 
@@ -243,110 +159,3 @@
 
 
 
-
-
-<!-- <div class="search_container">
-  <input type="text" id="search_bar">
-  <div class="suggestions">
-
-  </div>
-</div>
-<% if(!user.profile){ %>
-  <h2>Create a profile</h2>
-    <form action="/profiles/new" method="POST">
-      <label>Username</label>
-      <input type="text" name="username">
-      <label for="favorite_animal">Favorite Animal</label>
-      <input type="text" name="favorite_animal">
-      <label for="Popularity_level">Popularity Level</label>
-      <input type="number" name="popularity_level">
-      <input type="submit">
-    </form>
-  <hr>
-<% }else{ %>
-
-
-
-  <header>
-
-    <div class="container">
-
-      <div class="profile">
-
-        <div class="profile-image">
-
-          <img src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces" alt="">
-
-        </div>
-
-        <div class="profile-user-settings">
-
-          <h1 class="profile-user-name"><%= user.profile.username %></h1>
-
-          <button class="btn profile-edit-btn">Edit Profile</button>
-
-          <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog" aria-hidden="true"></i></button>
-
-        </div>
-
-        <div class="profile-stats">
-
-          <ul>
-            <li><span class="profile-stat-count"><%= posts.posts.length %></span> posts</li>
-            <li><span class="profile-stat-count"><%= user.profile.popularity_level %></span> Popularity</li>
-          </ul>
-
-        </div>
-
-        <div class="profile-bio">
-
-          <p><span class="profile-real-name"><%= user.name %></span> My favorite Animal is <%= user.profile.favorite_animal %></p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </header>
-
-  <main>
-
-    <div class="container">
-
-      <div class="gallery">
-
-    <% posts.posts.reverse().forEach((post) => { %>
-        <div class="gallery-item" tabindex="0">
-
-          <div class="post_image" style="background-image: url(<%= post.url %>)"></div>
-
-
-          <div class="gallery-item-info">
-
-          </div>
-
-        </div>
-    <% })%>
-
-
-      </div>
-
-
-    </div>
-    <form action="/posts/new" method="POST" enctype="multipart/form-data">
-    <label for="title">Title</label>
-    <input type="text" name="title">
-    <label for="post_content"></label>
-    <input type="text" name="post_content">
-    <input type='file' name='image' />
-    <input type="submit">
-  </form>
-  <hr>
-
-  </main>
-<% } %>
-
-<p> Welcome <%= user.email %></p>
-<a href="/users/logout">Logout</a>
-<script src="static/scripts/searchProfile.js"></script> !-->

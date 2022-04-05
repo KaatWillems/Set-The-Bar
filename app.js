@@ -69,6 +69,7 @@ app.use('/',require('./routes/index'));
 app.use('/users',require('./routes/users'));
 app.use('/profiles',require('./routes/profiles'));
 app.use('/bars',require('./routes/bars'));
+app.use('/reviews', require('./routes/reviews'));
 
 
 
