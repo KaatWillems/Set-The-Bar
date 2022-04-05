@@ -1,73 +1,112 @@
-<div class="filter-container" style="display: none;">
-
-    <div class="container-clear-x">
-      <button class="clear">Clear all</button>
-
-      <div class="x"> X </div>
-
+<div class="search-container mgtop-80px">
+  <div class="set-the-bar-search-bar">
+    <div class="icon-loupe"></div>
+    <form action="/bars/search" method="POST" id="search_bar">
+    <input  type="text" placeholder="Search Location" class="search-input" name="userquery">
+  </form>
+    <div class="icon-mic"></div>  
+  </div>
+  </div>
+<div class="filterby-container mgtop-80px">
+    <button class="filterby-btn">FILTER BY</button>
+    <div class="set-display">
+        <button class="set-display-active-btn">List</button>
+        <button class="set-display-inactive-btn">Map</button>
     </div>
+</div>
+<div class="filter-container mgtop-80px" style="display: none;">
 
-    <div class="filter-meters-container">
-      <form>
+  <div class="container-clear-x">
+    <button class="clear">Clear all</button>
 
-        <div class="explain-filter-meters">
-          What are you looking for?
-        </div>
-
-        <div class="stars">stars to add</div>
-          <div class="filter-crowd"> 
-              <p>Crowd</p>
-              <input type="range" min="1" max="9" value="5" class="filter-slider">
-      
-             <div class="filter-labels-crowd"> 
-                  <span>Pretty quiet</span> 
-                  <span>Room for more</span> 
-                  <span>Full house</span>
-              </div>
-          </div> 
-      
-          <div class="filter-hygiene"> 
-            <p>Hygiene</p>
-            <input type="range" min="1" max="9"  class="filter-slider">
-            <div class="filter-labels-hygiene">
-                <span>Clean</span> 
-                <span>Decent</span> <span>Unimportant</span>
-              </div>
-           </div> 
-      
-          <div class="filter-atmosphere"> 
-            <p>Atmosphere</p>
-            <input type="range" min="1" max="9" value="5" class="filter-slider">
-            <div class="filter-labels-atmo">
-              <span>Dancing</span> <span>Chatting</span></div>
-          </div> 
-      
-          <div class="filter-safety"> 
-            <p>Safety</p>
-            <input type="range" min="1" max="9" value="5" class="filter-slider">
-           <div class="filter-labels-safety"> 
-             <span>People feel safe</span> <span>Unimportant</span></div>
-          </div> 
-
-          
-      
-    
-          <button class="apply-filter" >Apply filters</button>
-      </form>
-
-
+    <div class="x"> X </div>
 
   </div>
-</div>
-<div class="filterby-container">
-    <button>FILTER BY</button>
-    <div class="set-display">
-        <button>List</button>
-        <button>Map</button>
-    </div>
-</div>  
-</div>
-</div>
-<div class="results-container">
 
+  <div class="filter-meters-container">
+    <form>
+
+      <div class="explain-filter-meters">
+        What are you looking for?
+      </div>
+
+      <div class="stars">stars to add</div>
+        <div class="filter-crowd"> 
+            <p>Crowd</p>
+            <input type="range" min="1" max="9" value="5" class="filter-slider">
+    
+           <div class="filter-labels-crowd"> 
+                <span>Pretty quiet</span> 
+                <span>Room for more</span> 
+                <span>Full house</span>
+            </div>
+        </div> 
+    
+        <div class="filter-hygiene"> 
+          <p>Hygiene</p>
+          <input type="range" min="1" max="9"  class="filter-slider">
+          <div class="filter-labels-hygiene">
+              <span>Clean</span> 
+              <span>Decent</span> <span>Unimportant</span>
+            </div>
+         </div> 
+    
+        <div class="filter-atmosphere"> 
+          <p>Atmosphere</p>
+          <input type="range" min="1" max="9" value="5" class="filter-slider">
+          <div class="filter-labels-atmo">
+            <span>Dancing</span> <span>Chatting</span></div>
+        </div> 
+    
+        <div class="filter-safety"> 
+          <p>Safety</p>
+          <input type="range" min="1" max="9" value="5" class="filter-slider">
+         <div class="filter-labels-safety"> 
+           <span>People feel safe</span> <span>Unimportant</span></div>
+        </div> 
+
+        
+    
+  
+        <button class="apply-filter" >Apply filters</button>
+    </form>
+</div>
+</div>
+<div class="results-container mgtop-80px">
+  <% bars.forEach((bar) => { %>
+<div class="bar-card mgtop-40px">
+  <div class="bar-img" style=background-image:url(../static/assets/barimages/<%=Math.round((Math.random()*9)+1)%>.jpg)>
+  </div>
+  <div class="bar-bottom-container">
+    
+<div class="bar-info">
+  <div class="bar-name">
+<h3>
+  <%= bar.bar.name %>
+</h3>
+  </div>
+  <div class="bar-info-bottom-container">
+    <div class="bar-stars">
+      <% bar.barrating.forEach((rating) => { %>
+        <% if(rating === "*"){ %>
+          <i class="fa fa-star" aria-hidden="true" style=`color: white; font-size: 2.5rem;`></i>
+        <% } else if (rating === "/") { %>
+          <i class="fa fa-star-half-o" aria-hidden="true" style=`color: white; font-size: 2.5rem;`></i>
+        <% } else { %>
+          <i class="fa fa-star-o" aria-hidden="true" style=`color: white; font-size: 2.5rem;`></i>                
+        <% } %>
+      <% }) %>
+    </div>
+    <div class="bar-reviews">
+      <p><%= Math.round((Math.random()*2000))%> reviews</p>
+    </div>
+  </div>
+</div>
+    <div class="bar-heart">
+      <div class="carousel-heart heart-results"></div>
+    </div>
+  </div>
+</div>
+
+<% }) %>
 </div>

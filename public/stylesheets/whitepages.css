@@ -20,7 +20,7 @@ body{
     background-color: var(--whitesmoke-bg);
     color: var(--font-black);
     overflow: auto scroll ;
-    height: 100vh ;
+    min-height: 100vh ;
 }
 
 .review-container{  
@@ -80,7 +80,7 @@ body{
         margin-top: 30px;
         
     }
-/* SHOW METERS READONLY /// REVIEW METERS ARE BELOW */
+/* SHOW METERS READONLY (DETAILED BAR PAGE) /// REVIEW METERS FOR THE REVIEW PAGE ARE BELOW */
 .show-meters-container {
     /* border: solid 2px red; */
     display:flex;
@@ -103,6 +103,14 @@ body{
     font-size: 3rem;
   margin-bottom: 30px;
     
+}
+
+.btn-add-review {
+    background-color: #4D194D;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 30px;
+    margin-top:50px;
 }
 
 .show-crowd {

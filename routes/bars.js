@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Profile = require("../models/profile").Profile;
 const Bar = require("../models/bar").Bar
+const {ensureAuthenticated} = require('../config/auth')
+
 //const getStars = require("index").getStars
 
 // const cloudinary = require("cloudinary");
@@ -34,9 +36,7 @@ const getStars = (bar) => {
 
 
 
-router.post("/search", async (req, res) => {
-    //console.log("testtttttttt router.post")
-    //console.log(req.body, "req.body")
+router.post("/search", ensureAuthenticated, async (req, res) => {
     if(!req.user.Profile){
 
         bararr = []
@@ -48,17 +48,15 @@ router.post("/search", async (req, res) => {
           bararr.push({bar: bar, barrating: getStars(bar)})
           
         })
-        //console.log(bararr)
-        // let trendingbars
         res.render('search',{
-          // user: req.user,
-          // bars: bararr,
+          user: req.user,
+          bars: bararr,
   
         });
     } else {
         res.render('search',{
-            // user: req.user,
-            // bars: bararr,
+            user: req.user,
+            bars: bararr,
     
           });
     }
@@ -87,7 +85,8 @@ router.post("/search", async (req, res) => {
 
   router.get("/show/:id", async (req, res) => {
     const barquery = await Bar.findById(req.params.id)
-    //here we should still add populate reviews when we have reviews in the DB 
+    //here we should still add populate reviews when we have reviews in the DB  (.populate.Reviews)
+   
     //console.log(barquery)
 
     res.render('bardetail', {
