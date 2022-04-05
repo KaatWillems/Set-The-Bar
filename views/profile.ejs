@@ -1,36 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-
-<link rel="stylesheet" href="/static/stylesheets/whitepages.css" type="text/css">
-<link rel="stylesheet" href="/static/stylesheets/main.css" type="text/css">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
 
-</head>
-<body>
+<H1>HELLO </H1> 
 
-
-
-<div class="test-profile">
-
-
-</div>
-<div>
-  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, quas porro. Modi beatae eum a. Vitae quibusdam voluptas culpa maiores animi accusantium, laboriosam consectetur. Minima ea nulla repellat quis doloribus.
-</div>
-<% if(typeof user != 'undefined'){ %>
-  <div class="navigation-tab">
-    <div class="nav-button navigation-explore"><a class='nav-links' href="/dashboard"></a></div>
-    <div class="nav-button navigation-review"><a class='nav-links' href="/review"></a></div>
-    <div class="nav-button navigation-favorites"><a class='nav-links' href="/favorites"></a></div>
-    <div class="nav-button navigation-profile"><a class='nav-links' href="/profiles"></a></div>
-  </div>
-  <% } %>
-  <script src="/static/scripts/main.js"></script>
-</body>
-</html>
+<%= user.email %> 
