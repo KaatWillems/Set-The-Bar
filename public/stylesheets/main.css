@@ -340,16 +340,24 @@ iframe {
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: #4d194d;
 }
-.set-the-logo {
+.set-the-logo-white {
   height: 150px;
   width: 600px;
-  background-image: url("../assets/img/Artboard_14x.png");
+  background-image: url("../assets/img/white-logo.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
 }
+.set-the-logo-purple {
+    display: none;
+    height: 150px;
+    width: 600px;
+    background-image: url("../assets/img/purple-logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
 .set-the-bar-text {
   display: flex;
   flex-direction: column;
@@ -585,53 +593,54 @@ a {
   height: 100px;
 }
 .bar-card {
-    display: flex;
-    flex-direction: column;
-    height: 700px;
-    width: 100%;
-    color:white;
+  display: flex;
+  flex-direction: column;
+  height: 700px;
+  width: 100%;
+  color: white;
 }
 .bar-img {
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 75%;
-    width: 100%;
-    border-radius:30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 75%;
+  width: 100%;
+  border-radius: 30px;
 }
 .bar-bottom-container {
-display: flex;
-align-items: center;
-width: 100%;
-height: 25%;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 25%;
 }
 .bar-info {
-    width: 80%;
-    height: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  width: 80%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .bar-info-bottom-container {
-    display: flex;
+  display: flex;
 }
 .bar-stars {
-    width: 35%;
+  width: 35%;
 }
-.bar-heart{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height:100%;
-    width: 20%;
+.bar-heart {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  width: 20%;
 }
-.heart-results{
-    height:120px;
-    width: 120px;
+.heart-results {
+  height: 120px;
+  width: 120px;
 }
 
 /*--FILTER --*/
 button {
   font-size: 1em;
+  cursor: pointer;
 }
 .filterby-btn {
   height: 100px;
@@ -653,15 +662,17 @@ button {
   border: none;
 }
 .set-display-inactive-btn {
-    background: rgba(255, 255, 255, 0);
-    color:white;
+  background: rgba(255, 255, 255, 0);
+  color: white;
 }
 .set-display-active-btn {
-    background-color: white;
+  background-color: white;
   border-radius: 18px;
   color: #4d194d;
 }
 .filter-container {
+  display: flex;
+  flex-direction: column;
   background-color: whitesmoke;
   width: 100%;
   height: 100%;

@@ -20,7 +20,7 @@ body{
     background-color: var(--whitesmoke-bg);
     color: var(--font-black);
     overflow: auto scroll ;
-    height: 100vh ;
+    min-height: 100vh ;
 }
 
 .review-container{  
