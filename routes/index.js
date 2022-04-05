@@ -37,7 +37,7 @@ router.get('/favorites', (req,res)=>{
 // })
 
 router.get('/profiles', (req,res)=>{
-  res.render('profile.ejs', { layout : 'profile.ejs'});
+  res.render('profile.ejs');
 })
 
 
@@ -88,10 +88,6 @@ const getStars = (bar) => {
 
 router.get('/dashboard',ensureAuthenticated, async (req,res)=>{
     if(!req.user.Profile){
-
-    
-      
-
 
       bararr = []
 
