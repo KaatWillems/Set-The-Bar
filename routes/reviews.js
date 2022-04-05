@@ -3,6 +3,7 @@ const router = express.Router();
 const Profile = require("../models/profile").Profile;
 const User = require("../models/user")
 const Review = require("../models/review").Review
+const Bar = require("../models/bar").Bar
 
 
   
@@ -20,7 +21,7 @@ const Review = require("../models/review").Review
         // profile: p 
       })
 
-      console.log(req.body, "console log req body from reviews.js")
+      //console.log(req.body, "console log req body from reviews.js")
 
       await newReview.save()
       res.redirect('/dashboard')
@@ -30,5 +31,20 @@ const Review = require("../models/review").Review
     }
   
   })
+
+  router.get("/:id", async (req, res) => {
+    const reviewquery = await Bar.findById(req.params.id)
+    //here we should still add populate reviews when we have reviews in the DB  (.populate.Reviews)
+   
+    console.log(reviewquery, "console log reviewquery in review.js")
+
+    res.render('review', {
+      bar: reviewquery
+    })
+  })
+
+
+
+
 
 module.exports = router;

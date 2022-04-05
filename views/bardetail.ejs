@@ -2,9 +2,11 @@
     <div class="review-left-text">
         <div class="img-bar"></div>
         <h2 class="bartitle"> <%= bar.name %></h2>
-        <div class="review-rating"></div>
-          <button class="btn-add-review" >Add a review</button>
-        
+        <div class="review-rating"></div>     
+          
+        <a href="/reviews/<%= bar._id %>">
+          <button class="btn-add-review">Add a review</button>
+        </a>
     </div>
   
     <div class="show-meters-container">
