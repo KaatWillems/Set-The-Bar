@@ -47,11 +47,11 @@ router.post("/search", ensureAuthenticated, async (req, res) => {
 
         bars.forEach(async (bar) => {
           bararr.push({bar: bar, barrating: getStars(bar),reviews: bar.reviews})
-          if (bar.reviews != "") {
-          Array.from(bar.reviews).forEach(review => {
-            console.log(review)
-          })
-          }
+//           if (bar.reviews != "") {
+//           Array.from(bar.reviews).forEach(review => {
+//             console.log(review)
+//           })
+//           }
         })
         res.render('search',{
           user: req.user,
