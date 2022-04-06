@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Profile = require("../models/profile").Profile;
 const Bar = require("../models/bar").Bar
+const Review = require("../models/review").Review;
 const {ensureAuthenticated} = require('../config/auth')
 
 //const getStars = require("index").getStars
@@ -41,17 +42,20 @@ router.post("/search", ensureAuthenticated, async (req, res) => {
 
         bararr = []
   
-        // let bars = await Bar.find({addressCity: req.body.userquery})
-        let bars = await Bar.find({name: req.body.userquery})
+        let bars = await Bar.find({addressCity: req.body.userquery})
+        // let bars = await Bar.find({name: req.body.userquery})
 
-        bars.forEach((bar) => {
-          bararr.push({bar: bar, barrating: getStars(bar)})
-          
+        bars.forEach(async (bar) => {
+          bararr.push({bar: bar, barrating: getStars(bar),reviews: bar.reviews})
+          if (bar.reviews != "") {
+          Array.from(bar.reviews).forEach(review => {
+            console.log(review)
+          })
+          }
         })
         res.render('search',{
           user: req.user,
-          bars: bararr,
-  
+          bars: bararr
         });
     } else {
         res.render('search',{
