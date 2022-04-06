@@ -42,7 +42,28 @@ const BarSchema  = new mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: "Review"
     }
-  ]
+  ],
+  averages: [{
+    ratingType: String,
+    rating: Number
+  }]
+  // averages : [
+  //   {rating: {
+  //     type: Number
+  //   }},
+  //   {crowd: {
+  //     type: Number
+  //   }},
+  //   {hygiene: {
+  //     type: Number
+  //   }},
+  //   {atmosphere: {
+  //     type: Number
+  //   }},
+  //   {safety: {
+  //     type: Number
+  //   }}
+  // ]
 });
 
 const Bar = mongoose.model('Bar',BarSchema);

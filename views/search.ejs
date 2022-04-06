@@ -74,7 +74,6 @@
 </div>
 <div class="results-container mgtop-80px">
   <% bars.forEach((bar) => { %>
-    
 <div class="bar-card mgtop-40px">
   
   <a href="/bars/show/<%= bar.bar._id %>"><div class="bar-img" style=background-image:url(../static/assets/barimages/<%=Math.round((Math.random()*9)+1)%>.jpg)>
@@ -100,7 +99,7 @@
       <% }) %>
     </div>
     <div class="bar-reviews">
-      <p><%= Math.round((Math.random()*2000))%> reviews</p>
+      <p><%= bar.reviews.length%> reviews</p>
     </div>
   </div>
 </div>
