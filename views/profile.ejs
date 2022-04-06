@@ -1,5 +1,69 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .inner-body {
+      padding: 0;
+      margin: 0;
+    }
+    .header {
+      display: none; 
+    }
+    .nav-button {
+      width: 3rem;
+      height: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="background-cover-container">
+    <div class="background-text">Profile</div>
+    <div class="background-settings"></div>
+  </div>
+  <div class="profile-picture-container">
+    <div class="profile-picture-empty"></div>
+    <div class="profile-picture">
+      <div class="profile-pic-plus"></div>
+    </div>
+    <div class="profile-picture-empty"></div>
+  </div>
+  <form action="/picture/upload" method="POST" enctype="multipart/form-data">
+    <label for="title">Title</label>
+		<input type="text" name="title">
+		<input type='file' name='image' />
+		<input type="submit" id="send-image-button">
+	</form>
+
+	<div id="my-images">
 
 
-<H1>HELLO </H1> 
+	</div>
+  <div class="profile-info-container">
+  <h2 class="profile-name"> <%= user.email %> </h2>
+  <button class="modify-btn">Modify Profile</button>
+  <div class="review-container">
+    <div class="review-box-container">
+      <div class="review-box">
+        <div class="review-box-review-number">4</div>
+        <div class="review-box-name">Reviews</div>
+      </div>
+      <!-- <div class="review-box-arrow"></div> -->
+    </div>
+  </div>
+  <h2>Recent bars you visited</h2>
+  <div class="recent-visited-container">
+    <div class="recent-visited-bar"></div>
+  </div>
+  <h2>Favorites bars</h2>
+  <div class="recent-visited-container">
+    <div class="recent-visited-bar"></div>
+  </div>
+  
+  </div>
 
-<%= user.email %> 
+
+</body>
+</html>

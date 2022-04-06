@@ -6,11 +6,14 @@ const User = require("../models/user").User;
 // OUR CODE
 
 router.get('/show/:id', (req, res) => {
-  console.log(User)
   res.render('profile',{
-    user: req.user,
+    user: req.user
   });
 })
+
+
+
+
 // router.post("/new", async (req, res) => {
 //   const newProfile = new Profile(req.body)
 //   // newProfile.save();

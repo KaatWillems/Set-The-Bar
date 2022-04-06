@@ -24,18 +24,11 @@ mongoose.connect(process.env.DB_CONNECT,{useNewUrlParser: true, useUnifiedTopolo
 //CLOUDINARY
 
 cloudinary.config({
-    cloud_name: "",
-    api_key: "",
-    api_secret: ""
+	cloud_name: process.env.CLOUDINARY_NAME,
+	api_key: process.env.CLOUDINARY_API_KEY,
+	api_secret: process.env.CLOUDINARY_SECRET_KEY
   });
 
-// const storage = new CloudinaryStorage({
-// cloudinary: cloudinary,
-// folder: "diogface",
-// allowedFormats: ["jpg", "png"],
-// transformation: [{ width: 500, height: 500, crop: "limit" }]
-// });
-// const parser = multer({ storage: storage });
 
 //EJS
 app.set('view engine','ejs');
