@@ -64,9 +64,8 @@ router.get("/search", async (req, res) => {
     user: req.user,
     bars: [],
   });
-  //console.log("testtttttttt router.get")
 
-
+})
   router.get("/show/:id",ensureAuthenticated,  async (req, res) => {
     const barquery = await Bar.findById(req.params.id).populate("averages")
 
@@ -90,12 +89,6 @@ router.get("/search", async (req, res) => {
   })
 
 
-  //console.log(barquery)
 
-  res.render("bardetail", {
-    bar: barquery,
-    user: req.user,
-  });
-});
 
 module.exports = router;
