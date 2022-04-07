@@ -13,6 +13,25 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_SECRET_KEY
   });
 
+
+  router.get('/fav/:id', async (req, res) => {
+    console.log(req.user)
+  
+  
+    try {
+      res.render('favorites',{
+        
+        user: req.user,
+  
+      });
+  
+    }catch(err){
+      console.log(err)
+      res.redirect("/register")
+    }
+  
+  })
+
 router.get('/show/:id', async (req, res) => {
   console.log(req.user)
 
