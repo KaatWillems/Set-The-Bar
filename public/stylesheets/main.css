@@ -387,6 +387,7 @@ iframe {
   margin-top: 5vh;
 }
 .input-info {
+  font-size: 3rem;
   margin-bottom: 3rem;
   font-family: "Lato", sans-serif;
   color: #4d194d;
@@ -839,4 +840,115 @@ button {
 }
 .mgtop-10px {
   margin-top: 10px;
+}
+
+/*-- profil -- CSS --*/
+
+
+.background-cover-container {
+    width: 100vw;
+    height: 30vh;
+    background-image: url("https://i.imgur.com/p03MfXp.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Lato", sans-serif;
+    font-size: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+}
+.background-text {
+    color: white;
+    z-index: 2;
+}
+.background-settings {
+    background-image: url("https://cdn.discordapp.com/attachments/953201000100024370/961263502419451995/unknown.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 30px;
+    width: 30px;
+}
+.profile-picture-container {
+    width: 100vw;
+    height: 15.5vh;
+    margin-top: -7.5vh;
+    display: flex;
+    flex-direction: row;
+}
+.profile-picture {
+    background-image: url("https://i1.sndcdn.com/artworks-ywcx1pUzUGGvjwmH-BUNWRA-t500x500.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+
+
+}
+.profile-picture-empty {
+width: 100%;
+height: 100%;
+}
+.profile-pic-plus {
+    background-image: url("https://cdn.discordapp.com/attachments/953201000100024370/961264076393164840/unknown.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 20px;
+    width: 20px;
+    
+}
+.profile-info-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+    font-family: "Lato", sans-serif;
+    color: white;
+}
+.profile-name {
+   margin: 1rem; 
+}
+.modify-btn {
+    height: 30px;
+    border-radius: 70px;
+    font-weight: 600;
+    border: none;
+    width: 150px;
+    color: #4d194d;
+}
+.review-container {
+    background-color:#4d194d;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.review-box-container {
+    width: 30%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-family: "Lato", sans-serif;  
+}
+.review-box-review-number {
+    font-size: 2rem;
+}
+.recent-visited-bar {
+    background-color: #4d90fe;
+    width: 300px;
+    height: 200px;
+    margin: 20px;
 }

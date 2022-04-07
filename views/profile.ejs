@@ -1,87 +1,71 @@
-
-<div class="search_container">
-  <input type="text" id="search_bar">
-  <div class="suggestions">
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .inner-body {
+      padding: 0;
+      margin: 0;
+    }
+    .header {
+      display: none; 
+    }
+    .nav-button {
+      width: 3rem;
+      height: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="background-cover-container">
+    <div class="background-text">Profile</div>
+    <div class="background-settings"></div>
   </div>
-</div>
-
-
-
-
-  <header>
-
-    <div class="container">
-
-      <div class="profile">
-
-        <div class="profile-image">
-
-          <img src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces" alt="">
-
-        </div>
-
-        <div class="profile-user-settings">
-
-          <h1 class="profile-user-name"><%= posts.username %></h1>
-
-          <button class="btn profile-edit-btn">Edit Profile</button>
-
-          <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog" aria-hidden="true"></i></button>
-
-        </div>
-
-        <div class="profile-stats">
-
-          <ul>
-            <li><span class="profile-stat-count"><%= posts.posts.length %></span> posts</li>
-            <li><span class="profile-stat-count"><%= posts.popularity_level %></span> Popularity</li>
-          </ul>
-
-        </div>
-
-        <div class="profile-bio">
-
-          <p><span class="profile-real-name"></span> My favorite Animal is <%= posts.favorite_animal %></p>
-
-        </div>
-
-      </div>
-      <!-- End of profile section -->
-
+  <div class="profile-picture-container">
+    <div class="profile-picture-empty"></div>
+    <div class="profile-picture">
+      <div class="profile-pic-plus"></div>
     </div>
-    <!-- End of container -->
+    <div class="profile-picture-empty"></div>
+  </div>
+  <form action="/profiles/upload" method="POST" enctype="multipart/form-data">
+		<input type='file' name='image' />
+    <input type="text" name="username">
+		<input type="submit" id="send-image-button">
+	</form>
 
-  </header>
-
-  <main>
-
-    <div class="container">
-
-      <div class="gallery">
-
-    <% posts.posts.reverse().forEach((post) => { %>
-        <div class="gallery-item" tabindex="0">
-
-          <div class="post_image" style="background-image: url(<%= post.url %>)"></div>
+	<div id="my-images">
 
 
-          <div class="gallery-item-info">
-
-          </div>
-
-        </div>
-    <% })%>
-
-
+	</div>
+  <div class="profile-info-container">
+  <h2 class="profile-name"> <%= user.name %>
+  
+  </h2>
+  <button class="modify-btn">Modify Profile</button>
+  <div class="review-container">
+    <div class="review-box-container">
+      <div class="review-box">
+        <div class="review-box-review-number">4</div>
+        <div class="review-box-name">Reviews</div>
       </div>
-      <!-- End of gallery -->
-
-      <!-- <div class="loader"></div> -->
-
+      <!-- <div class="review-box-arrow"></div> -->
     </div>
-    <!-- End of container -->
+  </div>
+  <h2>Recent bars you visited</h2>
 
-  <hr>
+  <div class="recent-visited-container">
+    <div class="recent-visited-bar"></div>
+  </div>
+  <h2>Favorites bars</h2>
+  <div class="recent-visited-container">
+    <div class="recent-visited-bar"></div>
+  </div>
+  
+  </div>
 
-  </main>
 
+</body>
+</html>
