@@ -461,6 +461,7 @@ a {
   padding-right: 10px;
 }
 .icon-mic {
+  margin-right: 1rem;
   width: 40px;
   height: 40px;
   background-repeat: no-repeat;
@@ -474,7 +475,7 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958667761184288798/unknown.png);
+  display: none;
 }
 .search-input {
   background-color: #4d194d00;
@@ -905,6 +906,7 @@ height: 100%;
     
 }
 .profile-info-container {
+  background-color: #4d194d;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -926,7 +928,7 @@ height: 100%;
     width: 150px;
     color: #4d194d;
 }
-.review-container {
+.review-container-profile {
     background-color:#4d194d;
     width: 100vw;
     height: 10vh;
@@ -951,4 +953,15 @@ height: 100%;
     width: 300px;
     height: 200px;
     margin: 20px;
+}
+
+
+
+.favorites-main-container {
+  margin-top: 2rem;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
 }
