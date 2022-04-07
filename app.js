@@ -23,11 +23,6 @@ mongoose.connect(process.env.DB_CONNECT,{useNewUrlParser: true, useUnifiedTopolo
 
 //CLOUDINARY
 
-cloudinary.config({
-	cloud_name: process.env.CLOUDINARY_NAME,
-	api_key: process.env.CLOUDINARY_API_KEY,
-	api_secret: process.env.CLOUDINARY_SECRET_KEY
-  });
 
 
 //EJS
@@ -52,7 +47,6 @@ app.use((req,res,next)=> {
     next();
     })
 
-app.use(fileupload({useTempFiles: true}))
 app.use("/static", express.static("public"));
 
 

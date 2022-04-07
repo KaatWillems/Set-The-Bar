@@ -30,10 +30,9 @@
     </div>
     <div class="profile-picture-empty"></div>
   </div>
-  <form action="/picture/upload" method="POST" enctype="multipart/form-data">
-    <label for="title">Title</label>
-		<input type="text" name="title">
+  <form action="/profiles/upload" method="POST" enctype="multipart/form-data">
 		<input type='file' name='image' />
+    <input type="text" name="username">
 		<input type="submit" id="send-image-button">
 	</form>
 
@@ -42,7 +41,9 @@
 
 	</div>
   <div class="profile-info-container">
-  <h2 class="profile-name"> <%= user.email %> </h2>
+  <h2 class="profile-name"> <%= user.name %>
+  
+  </h2>
   <button class="modify-btn">Modify Profile</button>
   <div class="review-container">
     <div class="review-box-container">
@@ -54,6 +55,7 @@
     </div>
   </div>
   <h2>Recent bars you visited</h2>
+
   <div class="recent-visited-container">
     <div class="recent-visited-bar"></div>
   </div>
