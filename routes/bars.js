@@ -30,16 +30,45 @@ const getStars = (entry) => {
 };
 
 router.post("/search", ensureAuthenticated, async (req, res) => {
+  
   if (!req.user.Profile) {
-    let barResults = await Bar.find({ addressCity: req.body.userquery });
+
+    
+
+//search on bars and on barnames (regex makes sure the user does not need to type the exact name as in db)
+    let barResults = await Bar.find(
+        { $or: 
+        [
+          { addressCity: {$regex : String(req.body.userquery)} },
+          { name: {$regex : String(req.body.userquery)} }
+        ]      
+    }
+    )
     // let bars = await Bar.find({name: req.body.userquery})
 
     let barsNew = barResults.map((bar) => {
       if (bar.averages != undefined) {
         if (bar.averages[0] != undefined) {
-          return { ...bar._doc, stars: getStars(bar.averages[0].rating.toString()) };
+          return {
+            ...bar._doc,
+            stars: getStars(bar.averages[0].rating.toString()),
+          };
         } else {
-          return { ...bar._doc, stars: getStars("0") };
+          return {
+            ...bar._doc,
+            stars: getStars("0"),
+            averages: [
+              { _id: "noid", ratingType: "rating", rating: 0 },
+              { _id: "noid", ratingType: "crowd", rating: 0 },
+              { _id: "noid", ratingType: "hygiene", rating: 0 },
+              {
+                _id: "noid",
+                ratingType: "atmosphere",
+                rating: 0,
+              },
+              { _id: "noid", ratingType: "safety", rating: 0 },
+            ],
+          };
         }
       }
     });
@@ -69,25 +98,19 @@ router.get("/search", async (req, res) => {
   router.get("/show/:id",ensureAuthenticated,  async (req, res) => {
     const barquery = await Bar.findById(req.params.id).populate("averages")
 
+
     //console.log(barquery)
     //here we should  add populate reviews when we have reviews in the DB  (.populate.Reviews)
 
     // let reviewsDB = await Bar.find({ _id: req.params.id}, { reviews: 1 });
 
     // console.log(reviewsDB)
-   
-    res.render('bardetail', {
+
+    res.render("bardetail", {
       bar: barquery,
-      user: req.user
-      
-    })
-
-
-
-
-
-  })
-
+      user: req.user,
+    });
+  });
 
 
 
