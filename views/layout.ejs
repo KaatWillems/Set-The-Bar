@@ -9,8 +9,8 @@
 <body>
   <div class="inner-body">
     <div class="header">
-      <div class="set-the-logo-white"></div>
-      <div class="set-the-logo-purple"></div>
+      <a href="/dashboard"> <div class="set-the-logo-white"></div> </a>
+      <a href="/dashboard"> <div class="set-the-logo-purple"></div> </a>
       </div>
 <%- body %>
 </div>
@@ -18,7 +18,7 @@
 <% if(typeof user != 'undefined'){ %>
 <div class="navigation-tab">
   <div class="nav-button navigation-explore"><a class='nav-links' href="/dashboard"></a></div>
-  <div class="nav-button navigation-review"><a class='nav-links' href="/review"></a></div>
+  <div class="nav-button navigation-review"><a class='nav-links' href="/dashboard"></a></div>
   <div class="nav-button navigation-favorites"><a class='nav-links' href="/favorites"></a></div>
   <div class="nav-button navigation-profile"><a class='nav-links' href="/profiles/show/<%= user._id %>"></a></div>
 </div>

@@ -30,7 +30,21 @@
         What are you looking for?
       </div>
 
-      <div class="stars">stars to add</div>
+        <div class="stars">
+          <div class="rate">
+            <input type="radio" id="star5" name="reviewstars" value="5" />
+            <label for="star5" title="text">5 stars</label>
+            <input type="radio" id="star4" name="reviewstars" value="4" />
+            <label for="star4" title="text">4 stars</label>
+            <input type="radio" id="star3" name="reviewstars" value="3" />
+            <label for="star3" title="text">3 stars</label>
+            <input type="radio" id="star2" name="reviewstars" value="2" />
+            <label for="star2" title="text">2 stars</label>
+            <input type="radio" id="star1" name="reviewstars" value="1" />
+            <label for="star1" title="text">1 star</label>
+          </div>
+          
+        </div>
         <div class="filter-crowd"> 
             <p>Crowd</p>
             <input type="range" min="1" max="9" value="5" class="filter-slider">
@@ -74,31 +88,32 @@
 </div>
 <div class="results-container mgtop-80px">
   <% bars.forEach((bar) => { %>
-<div class="bar-card mgtop-40px">
-  <div class="bar-img" style=background-image:url(../static/assets/barimages/<%=Math.round((Math.random()*9)+1)%>.jpg)>
-  </div>
+<div class="bar-card mgtop-40px" >
+  
+  <a href="/bars/show/<%= bar._id %>"><div class="bar-img" style=background-image:url(../static/assets/barimages/<%=Math.round((Math.random()*9)+1)%>.jpg)>
+  </div></a>
   <div class="bar-bottom-container">
     
 <div class="bar-info">
   <div class="bar-name">
 <h3>
-  <%= bar.bar.name %>
+  <%= bar.name %>
 </h3>
   </div>
   <div class="bar-info-bottom-container">
     <div class="bar-stars">
-      <% bar.barrating.forEach((rating) => { %>
-        <% if(rating === "*"){ %>
+      <% bar.stars.forEach((star) => { %>
+        <% if(star === "*"){ %>
           <i class="fa fa-star" aria-hidden="true" style=`color: white; font-size: 2.5rem;`></i>
-        <% } else if (rating === "/") { %>
+        <% } else if (star === "/") { %>
           <i class="fa fa-star-half-o" aria-hidden="true" style=`color: white; font-size: 2.5rem;`></i>
         <% } else { %>
           <i class="fa fa-star-o" aria-hidden="true" style=`color: white; font-size: 2.5rem;`></i>                
         <% } %>
-      <% }) %>
+      <% }) %> 
     </div>
     <div class="bar-reviews">
-      <p><%= Math.round((Math.random()*2000))%> reviews</p>
+      <p><%= bar.reviews.length %> reviews</p>
     </div>
   </div>
 </div>
