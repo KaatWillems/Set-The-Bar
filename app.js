@@ -23,19 +23,7 @@ mongoose.connect(process.env.DB_CONNECT,{useNewUrlParser: true, useUnifiedTopolo
 
 //CLOUDINARY
 
-cloudinary.config({
-    cloud_name: "",
-    api_key: "",
-    api_secret: ""
-  });
 
-// const storage = new CloudinaryStorage({
-// cloudinary: cloudinary,
-// folder: "diogface",
-// allowedFormats: ["jpg", "png"],
-// transformation: [{ width: 500, height: 500, crop: "limit" }]
-// });
-// const parser = multer({ storage: storage });
 
 //EJS
 app.set('view engine','ejs');
@@ -59,7 +47,6 @@ app.use((req,res,next)=> {
     next();
     })
 
-app.use(fileupload({useTempFiles: true}))
 app.use("/static", express.static("public"));
 
 
