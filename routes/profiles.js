@@ -15,7 +15,6 @@ cloudinary.config({
 
 router.get('/show/:id', async (req, res) => {
   console.log(req.user)
-  console.log(req.profile)
 
 
   try {
