@@ -46,6 +46,7 @@ const BarSchema  = new mongoose.Schema({
   averages: [{
     ratingType: String,
     rating: Number
+    
   }]
   // averages : [
   //   {rating: {
