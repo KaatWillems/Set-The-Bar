@@ -39,8 +39,8 @@ router.post("/search", ensureAuthenticated, async (req, res) => {
     let barResults = await Bar.find(
         { $or: 
         [
-          { addressCity: {$regex : String(req.body.userquery)} },
-          { name: {$regex : String(req.body.userquery)} }
+          { addressCity: {$regex : String(req.body.userquery), $options: 'i'} },
+          { name: {$regex : String(req.body.userquery), $options: 'i' } }
         ]      
     }
     )
