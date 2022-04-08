@@ -30,8 +30,20 @@ const getStars = (entry) => {
 };
 
 router.post("/search", ensureAuthenticated, async (req, res) => {
+  
   if (!req.user.Profile) {
-    let barResults = await Bar.find({ addressCity: req.body.userquery });
+
+    
+
+//search on bars and on barnames (regex makes sure the user does not need to type the exact name as in db)
+    let barResults = await Bar.find(
+        { $or: 
+        [
+          { addressCity: {$regex : String(req.body.userquery)} },
+          { name: {$regex : String(req.body.userquery)} }
+        ]      
+    }
+    )
     // let bars = await Bar.find({name: req.body.userquery})
 
     let barsNew = barResults.map((bar) => {
@@ -81,10 +93,11 @@ router.get("/search", async (req, res) => {
     user: req.user,
     bars: [],
   });
-  //console.log("testtttttttt router.get")
 
-  router.get("/show/:id", ensureAuthenticated, async (req, res) => {
-    const barquery = await Bar.findById(req.params.id).populate("averages");
+})
+  router.get("/show/:id",ensureAuthenticated,  async (req, res) => {
+    const barquery = await Bar.findById(req.params.id).populate("averages")
+
 
     //console.log(barquery)
     //here we should  add populate reviews when we have reviews in the DB  (.populate.Reviews)
@@ -99,12 +112,6 @@ router.get("/search", async (req, res) => {
     });
   });
 
-  //console.log(barquery)
 
-  res.render("bardetail", {
-    bar: barquery,
-    user: req.user,
-  });
-});
 
 module.exports = router;

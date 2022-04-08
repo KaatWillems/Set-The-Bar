@@ -6,11 +6,7 @@ const Post = require("../models/post").Post
 const Bar = require("../models/bar").Bar
 
 //login page diogo 
-// router.get('/', (req,res)=>{
-//   Post.find({}, (err, allPosts) => {
-//     res.render('welcome', {allposts: allPosts });
-//   })
-// })
+
 
 //login page set the bar 
 router.get('/', (req,res)=>{  
@@ -22,16 +18,10 @@ router.get('/register', (req,res)=>{
     res.render('register');
 })
 
-
 //review page //THESE LINES STILL NEED TO BE ADDED ON MASTER 
-router.get('/favorites', (req,res)=>{
-  res.render('favoritebars');
+router.get('/review', (req,res)=>{
+  res.render('review');
 })
-
-// router.get('/review', (req,res)=>{
-//   res.render('review');
-// })
-
 
 //review page //THESE LINES STILL NEED TO BE ADDED ON MASTER 
 router.get('/favorites', (req,res)=>{
@@ -109,5 +99,7 @@ router.get('/dashboard',ensureAuthenticated, async (req,res)=>{
 
     }
 })
+
+
 module.exports = router;
 //module.exports = getStars()
