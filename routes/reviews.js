@@ -79,7 +79,7 @@ router.get("/new/:id", ensureAuthenticated, async (req, res) => {
   const reviewquery = await Bar.findById(req.params.id);
   
 
-  console.log(reviewquery, "console log reviewquery in review.js");
+  //console.log(reviewquery, "console log reviewquery in review.js");
 
   res.render("review", {
     user: req.user,

@@ -601,17 +601,22 @@ a {
 
 .location-general-container {
   display: flex;
-  font-size: 1.5em;
   flex-direction: column;
   color: #dadada;
 }
+
+.location-text {
+font-size: 1.3em;
+}
+
+
 .location-container {
   display: flex;
   align-items: center;
   margin-top: 40px;
 }
 .location-logo {
-  background-image: url("https://cdn-icons-png.flaticon.com/512/684/684908.png");
+  background-image: url("https://cdn.discordapp.com/attachments/953201000100024370/961927109352239104/Screenshot_2022-04-08_at_11.54.11.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
