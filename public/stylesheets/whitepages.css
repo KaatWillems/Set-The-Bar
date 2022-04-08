@@ -210,7 +210,7 @@ body {
 
 /* slider bars: FOR DETAIL BAR */
 
- input[type="range"].show-slider {
+ input[type="range"].show-slider, input[type="range"].filter-slider  {
   -webkit-appearance: none !important;
   width: 800px;
   height: 35px;
