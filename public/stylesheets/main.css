@@ -555,6 +555,17 @@ a {
   background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/961910441213329498/full_heart.png);
 }
 
+.carousel-heart-full {
+  width: 50px;
+  height: 50px;
+  background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/961910441213329498/full_heart.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-top:4px;
+  
+  
+}
 
 
 .carousel-rating {
