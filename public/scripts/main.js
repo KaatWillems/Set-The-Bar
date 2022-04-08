@@ -163,3 +163,4 @@ if (applyFilter != undefined) {
     setTheLogoPurple.style.display = "none";
   });
 }
+

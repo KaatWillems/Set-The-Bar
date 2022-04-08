@@ -16,6 +16,7 @@ cloudinary.config({
 
 router.get("/show/:id", ensureAuthenticated, async (req, res) => {
   console.log(req.user);
+
   try {
     res.render("profile", {
       user: req.user,
@@ -35,40 +36,32 @@ router.use(fileupload({ useTempFiles: true }));
 // pictures routes
 router.post("/upload", ensureAuthenticated, async (req, res) => {
   try {
-    // `req.files` exists thanks to the express-fileupload middleware :
+    //`req.files` exists thanks to the express-fileupload middleware :
     // const fileStr = req.files.image || "https://picsum.photos/300/600";
 
     // const uploadResponse = await cloudinary.uploader.upload(
     //   fileStr.tempFilePath,
     //   {}
     // );
-    // await Profile.findOneAndUpdate(
-    //   { _id: req.user.profile._id },
-    //   {
-    //     $set: {
-    //       profilePic: uploadResponse.url,
-    //       username: req.body.username,
-    //     },
-    //   }
-    // );
-    // const profileTest = await Profile.findOne({_id: req.user.profile._id })
-    // console.log(profileTest)
-    await Profile.findByIdAndUpdate(req.user.profile._id, {
-      username: req.body.username})
+
+    await Profile.findByIdAndUpdate(req.user.profile._id,
+      {
+        $set: {
+          username: req.body.username,
+          // profilePic: uploadResponse.url,
+        }
+      }
+    )
 
     res.redirect("/");
   } catch (err) {
     console.log("ERROR : ", err);
-    res.redirect("/dashboard");
+    res.redirect("/");
   }
 });
 
 // returns all Pictures in a JSON file
-router.get("/indexjson", (req, res) => {
-  Picture.find({}, (err, allThePictures) => {
-    res.json({ pictures: allThePictures });
-  });
-});
+
 
 // router.post("/new", async (req, res) => {
 //   const newProfile = new Profile(req.body)

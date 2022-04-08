@@ -919,6 +919,7 @@ button {
     height: 15.5vh;
     margin-top: -7.5vh;
     display: flex;
+    justify-content: center;
     flex-direction: row;
 }
 .profile-picture {
