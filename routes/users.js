@@ -63,11 +63,12 @@ router.post("/register", (req, res) => {
           username: "username",
         });
         newProfile.save();
+        const newId = newProfile._id
         const newUser = new User({
           name: name,
           email: email,
           password: password,
-          profile: newProfile
+          profile: newId
         });
         //hash password
         bcrypt.genSalt(10, (err, salt) =>
