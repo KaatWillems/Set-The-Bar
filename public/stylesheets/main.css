@@ -369,11 +369,13 @@ iframe {
 .set-the-bar-moto {
   font-family: "Satisfy", cursive;
   color: white;
+  font-size: 4rem;
 }
 .set-the-bar-intro {
   text-align: center;
   font-family: "Lato", sans-serif;
   color: white;
+  
 }
 .input-info-container {
   display: flex;
@@ -381,14 +383,18 @@ iframe {
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
-  height: 35vh;
+  /* height: 35vh; */
+  margin-top: 70px;
 }
-.input-register-info-container {
+
+
+
+/* .input-register-info-container {
   margin-top: 5vh;
-}
+} */
 .input-info {
   font-size: 3rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
   font-family: "Lato", sans-serif;
   color: #4d194d;
   background-color: white;
@@ -397,6 +403,10 @@ iframe {
   height: 6vh;
   text-align: center;
 }
+
+
+
+
 .connect-with-tier-container {
   margin-top: 3rem;
   font-family: "Lato", sans-serif;
@@ -416,13 +426,13 @@ iframe {
   margin-top: 5px;
 }
 .no-account {
-  margin-top: 8vh;
+  margin-top: 70px;
   font-family: "Lato", sans-serif;
-  color: black;
+  color: white;
   text-align: center;
 }
 .no-account span {
-  color: #006466;
+  color: #4ac0c2;
 }
 a {
   text-decoration: none;
