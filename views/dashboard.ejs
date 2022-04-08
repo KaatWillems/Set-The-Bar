@@ -16,13 +16,14 @@
     <div class="carousel-container mgtop-25px">
   
       <% bars.forEach((bar) => { %>
-      <a href="/bars/show/<%= bar.bar._id %>">
       <div class="carousel-row">
 
+        <a href="/bars/show/<%= bar.bar._id %>">
         <div class="carousel-image" style=background-image:url(../static/assets/barimages/<%=Math.round((Math.random()*9)+1)%>.jpg)>
-
+          
+        
   
-        </div>
+        </div></a>
         <div class="carousel-text-container mgtop-10px">
           <div class="carousel-text ">
             <div class="carousel-barname"><%= bar.bar.name %></div>
@@ -41,10 +42,15 @@
             </span>
             </div>
           </div>
-          <div class="carousel-heart"></div>
+            <% if(favoritebars.includes(bar.bar._id.toString())){ %> 
+          <div class="carousel-heart carousel-heart-full" data-action="remove" data-barid=<%= bar.bar._id %>></div>
+          <% } else { %>
+            <div class="carousel-heart" data-action="add" data-barid=<%= bar.bar._id %>></div>
+            <% } %>
+
         </div>
       </div>
-    </a>
+    
   
       <% }) %>
   

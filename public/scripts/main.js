@@ -102,9 +102,9 @@ const getResults = () => {
 const checkRating = (a, b) => {
   let points;
   if (a <= b) {
-    points = b + 4
+    points = b + 4;
   } else {
-    points = 0
+    points = 0;
   }
   return points;
 };
@@ -115,37 +115,39 @@ const checkRange = (userValue, barValue) => {
   } else {
     points = 0;
   }
-  return points
+  return points;
 };
 const checkImportance = (userValue, barValue) => {
-    let points
-    if (userValue <= barValue) {
-        points = barValue;
-    } else {
-        points = 0
-    }
-    return points
-}
+  let points;
+  if (userValue <= barValue) {
+    points = barValue;
+  } else {
+    points = 0;
+  }
+  return points;
+};
 
 const compareAndDisplay = (filterValues, barResults) => {
   barResults.forEach((barResult) => {
-    rating = checkRating(filterValues.rating, barResult.rating),
-    crowd = checkRange(filterValues.crowd, barResult.crowd),
-    hygiene = checkImportance(filterValues.hygiene, barResult.hygiene),
-    atmosphere = checkRange(filterValues.atmosphere, barResult.atmosphere),
-    safety =  checkImportance(filterValues.safety, barResult.safety)
-    let match = (rating+crowd+hygiene+atmosphere+safety)
-    barCards.forEach(barCard => {
-        if (barCard.id === barResult.id) {
-            barCard.dataset.match = match
-        }
-    })
+    (rating = checkRating(filterValues.rating, barResult.rating)),
+      (crowd = checkRange(filterValues.crowd, barResult.crowd)),
+      (hygiene = checkImportance(filterValues.hygiene, barResult.hygiene)),
+      (atmosphere = checkRange(filterValues.atmosphere, barResult.atmosphere)),
+      (safety = checkImportance(filterValues.safety, barResult.safety));
+    let match = rating + crowd + hygiene + atmosphere + safety;
+    barCards.forEach((barCard) => {
+      if (barCard.id === barResult.id) {
+        barCard.dataset.match = match;
+      }
+    });
   });
-  let newOrder = Array.from(barCards)
-  newOrder.sort((a,b) => parseInt(b.dataset.match) - parseInt(a.dataset.match))
-  newOrder.forEach(newOrderCard => {
-      resultsContainer.appendChild(newOrderCard)
-  })
+  let newOrder = Array.from(barCards);
+  newOrder.sort(
+    (a, b) => parseInt(b.dataset.match) - parseInt(a.dataset.match)
+  );
+  newOrder.forEach((newOrderCard) => {
+    resultsContainer.appendChild(newOrderCard);
+  });
 };
 
 if (applyFilter != undefined) {
@@ -163,3 +165,36 @@ if (applyFilter != undefined) {
     setTheLogoPurple.style.display = "none";
   });
 }
+
+// FAVORITE BARS
+
+const carrouselHearts = document.querySelectorAll(".carousel-heart");
+
+const sendBarIdToBrain = (newId) => {
+  fetch("/api/addfavorites", {
+    method: "POST", // or 'PUT'
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newId),
+  }).catch((error) => {
+    console.error("Error:", error);
+  });
+};
+
+carrouselHearts.forEach((heart) => {
+  heart.addEventListener("click", (e) => {
+    if (heart.classList.length === 2) {
+      heart.classList.remove("carousel-heart-full")
+    } else {
+      heart.classList.add("carousel-heart-full")
+    }
+    let object;
+    if (heart.dataset.action === "add") {
+      object = { _id: heart.dataset.barid, action: "add" };
+    } else {
+      object = { _id: heart.dataset.barid, action: "remove" };
+    }
+    sendBarIdToBrain(object);
+  });
+});
