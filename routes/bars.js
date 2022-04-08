@@ -98,7 +98,8 @@ router.get("/search", async (req, res) => {
   router.get("/show/:id",ensureAuthenticated,  async (req, res) => {
     const barquery = await Bar.findById(req.params.id).populate("averages")
 
-
+    // populates = reading averages and printing them in the detailed bar page
+    
     //console.log(barquery)
     //here we should  add populate reviews when we have reviews in the DB  (.populate.Reviews)
 
