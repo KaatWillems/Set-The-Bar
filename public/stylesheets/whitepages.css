@@ -63,7 +63,7 @@ body {
   font-size: 4rem;
 }
 
-.review-rating {
+.show-bar-rating {
   background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958709656300159046/unknown.png);
   height: 50px;
   width: 50%;
@@ -107,11 +107,8 @@ body {
   
 }
 
-
-
-
 .explain-meters {
-  font-size: 3rem;
+  font-size: 2.7rem;
   margin-bottom: 30px;
 }
 
@@ -131,7 +128,7 @@ body {
 }
 
 .show-crowd p {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
 }
 
@@ -140,7 +137,7 @@ body {
   justify-content: space-between;
   margin-top: 25px;
   margin-bottom: 20px;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
 }
 
 .show-hygiene {
@@ -151,7 +148,7 @@ body {
 }
 
 .show-hygiene p {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
 }
 
@@ -159,7 +156,14 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
+  /* overflow:visible; */
+  
+}
+
+span {
+  width: 30px;
+  overflow:visible;
 }
 
 .show-atmosphere {
@@ -169,14 +173,14 @@ body {
 }
 
 .show-atmosphere p {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
 }
 .show-labels-atmo {
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
 }
 
 .show-safety {
@@ -186,7 +190,7 @@ body {
 }
 
 .show-safety p {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
 }
 
@@ -194,7 +198,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
 }
 
 /* slider bars: */
