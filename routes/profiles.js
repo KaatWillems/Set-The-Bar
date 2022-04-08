@@ -7,7 +7,6 @@ const fileupload = require("express-fileupload");
 const passport = require("passport");
 const { ensureAuthenticated } = require("../config/auth");
 
-// OUR CODE
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
@@ -15,13 +14,8 @@ cloudinary.config({
 });
 
 router.get("/show/:id", ensureAuthenticated, async (req, res) => {
-  console.log(req.user);
-  console.log(req.user.profile);
 
   let profileDB = await Profile.findOne({_id: req.user.profile._id});
-
-  console.log(profileDB)
-
 
   try {
     res.render("profile", {
@@ -60,50 +54,12 @@ router.post("/upload", ensureAuthenticated, async (req, res) => {
       }
     )
 
-    res.redirect("/");
+    res.redirect(`/dashboard`);
   } catch (err) {
     console.log("ERROR : ", err);
-    res.redirect("/");
+    res.redirect("/dashboard");
   }
 });
 
-// returns all Pictures in a JSON file
-
-
-// router.post("/new", async (req, res) => {
-//   const newProfile = new Profile(req.body)
-//   // newProfile.save();
-//   try{
-//     await newProfile.save()
-//     await User.findOneAndUpdate({_id: req.user._id}, {profile: newProfile})
-//     res.redirect('/dashboard')
-
-//   }catch(err){
-//     console.log(err)
-//     res.redirect('/dashboard')
-//   }
-// })
-
-// code diogostogram
-// router.post("/search", async (req, res) => {
-//   console.log(req.body)
-//   const profiles = await Profile.find({"username": {$regex: req.body.user_input}})
-//   res.send({data: profiles})
-
-// })
-
-// const getUserProfileAndPosts = function(id){
-//   return Profile.findById(id).populate("posts")
-// }
-
-// const renderProfileWithPosts = async function(id, req, res){
-
-//   const posts = await getUserProfileAndPosts(id)
-//   console.log(posts)
-//   res.render('profile', {
-//     user: req.user,
-//     posts: posts
-//   })
-// }
 
 module.exports = router;

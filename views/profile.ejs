@@ -33,11 +33,13 @@
     </div>
     <div class="profile-picture-empty"></div>
   </div>
-  <form id="modify-profile-form" action="/profiles/upload" method="POST" enctype="multipart/form-data">
-		<input type='file' name='image' />
-    <input type="text" name="username" placeholder="UserName">
-		<input type="submit" id="send-image-button">
-	</form>
+<div class="modify-profile-form-container">
+    <form id="modify-profile-form" action="/profiles/upload" method="POST" enctype="multipart/form-data">
+      <input type='file' name='image' id="choose-file-btn" />
+      <input type="text" name="username" placeholder="UserName : " id="username-profile">
+  		<input type="submit" id="send-image-button">
+  	</form>
+</div>
 
 	</div>
   <div class="profile-info-container">
