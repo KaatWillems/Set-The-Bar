@@ -28,27 +28,24 @@
   </div>
   <div class="profile-picture-container">
     <div class="profile-picture-empty"></div>
-    <div class="profile-picture">
+    <div class="profile-picture" style="background-image:url(<%= profile.profilePic %>)">
       <div class="profile-pic-plus"></div>
     </div>
     <div class="profile-picture-empty"></div>
   </div>
-  <form action="/profiles/upload" method="POST" enctype="multipart/form-data">
+  <form id="modify-profile-form" action="/profiles/upload" method="POST" enctype="multipart/form-data">
 		<input type='file' name='image' />
-    <input type="text" name="username">
+    <input type="text" name="username" placeholder="UserName">
 		<input type="submit" id="send-image-button">
 	</form>
 
-	<div id="my-images">
-
-
 	</div>
   <div class="profile-info-container">
-  <h2 class="profile-name"> <%= user.name %>
+  <h2 class="profile-name"> <%= profile.username %>
   <div id="my-images"></div>
   
   </h2>
-  <button class="modify-btn">Modify Profile</button>
+  <button id="modify-profile-btn">Modify Profile</button>
   <div class="review-container-profile">
     <div class="review-box-container">
       <div class="review-box">

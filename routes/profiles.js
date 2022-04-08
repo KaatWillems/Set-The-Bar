@@ -16,14 +16,21 @@ cloudinary.config({
 
 router.get("/show/:id", ensureAuthenticated, async (req, res) => {
   console.log(req.user);
+  console.log(req.user.profile);
+
+  let profileDB = await Profile.findOne({_id: req.user.profile._id});
+
+  console.log(profileDB)
+
 
   try {
     res.render("profile", {
       user: req.user,
+      profile: profileDB
     });
   } catch (err) {
     console.log(err);
-    res.redirect("/register");
+    res.redirect("/");
   }
 });
 
@@ -36,19 +43,19 @@ router.use(fileupload({ useTempFiles: true }));
 // pictures routes
 router.post("/upload", ensureAuthenticated, async (req, res) => {
   try {
-    //`req.files` exists thanks to the express-fileupload middleware :
-    // const fileStr = req.files.image || "https://picsum.photos/300/600";
+   // `req.files` exists thanks to the express-fileupload middleware :
+    const fileStr = req.files.image || "https://picsum.photos/300/600";
 
-    // const uploadResponse = await cloudinary.uploader.upload(
-    //   fileStr.tempFilePath,
-    //   {}
-    // );
+    const uploadResponse = await cloudinary.uploader.upload(
+      fileStr.tempFilePath,
+      {}
+    );
 
     await Profile.findByIdAndUpdate(req.user.profile._id,
       {
         $set: {
           username: req.body.username,
-          // profilePic: uploadResponse.url,
+          profilePic: uploadResponse.url,
         }
       }
     )

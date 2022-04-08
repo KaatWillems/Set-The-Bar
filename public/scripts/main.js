@@ -13,6 +13,9 @@ const body = document.querySelector("body"),
   carouselImages = document.querySelectorAll(".carousel-image"),
   reviewContainer = document.querySelector(".review-container"),
   resultsContainer = document.querySelector(".results-container");
+  UpdateProfileButton = document.querySelector('#modify-profile-btn');
+  updateWindow = document.querySelector('#modify-profile-form')
+  
 
 if (searchInput != undefined) {
   searchInput.addEventListener("focus", () => {
@@ -164,3 +167,6 @@ if (applyFilter != undefined) {
   });
 }
 
+UpdateProfileButton.addEventListener('click', () => {
+  updateWindow.style.display='flex'
+})

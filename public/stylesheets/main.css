@@ -923,10 +923,10 @@ button {
     flex-direction: row;
 }
 .profile-picture {
-    background-image: url("https://i1.sndcdn.com/artworks-ywcx1pUzUGGvjwmH-BUNWRA-t500x500.jpg");
+    /* background-image: url("https://i1.sndcdn.com/artworks-ywcx1pUzUGGvjwmH-BUNWRA-t500x500.jpg"); */
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     width: 130px;
     height: 130px;
     border-radius: 100%;
@@ -938,7 +938,7 @@ width: 33%;
 height: 100%;
 }
 .profile-pic-plus {
-    background-image: url("https://cdn.discordapp.com/attachments/953201000100024370/961264076393164840/unknown.png");
+    /* background-image: url("https://cdn.discordapp.com/attachments/953201000100024370/961264076393164840/unknown.png"); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -961,7 +961,7 @@ height: 100%;
 .profile-name {
    margin: 1rem; 
 }
-.modify-btn {
+#modify-profile-btn {
     height: 30px;
     border-radius: 70px;
     font-weight: 600;
@@ -1005,4 +1005,9 @@ height: 100%;
   flex-direction: column;
   justify-content:center;
   align-items: center;
+}
+
+#modify-profile-form {
+  background-color: #4ac0c2;
+  display: none;
 }
