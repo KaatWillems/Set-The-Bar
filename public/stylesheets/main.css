@@ -886,14 +886,14 @@ button {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    width: 100%;
-    height: 100%;
+    width: 130px;
+    height: 130px;
     border-radius: 100%;
 
 
 }
 .profile-picture-empty {
-width: 100%;
+width: 33%;
 height: 100%;
 }
 .profile-pic-plus {
