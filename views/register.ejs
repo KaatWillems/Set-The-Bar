@@ -7,7 +7,7 @@
 
 <%- include ('./partials/messages') %>
 <form action="/users/register" method="POST">
-<div>
+<div class="input-info">
     <label for="name"></label>
     <input
       class="input-info"
@@ -48,6 +48,7 @@
       value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
     />
   </div>
+  
   <button type="submit" class="btn btn-primary btn-block input-info">
     Register
   </button>

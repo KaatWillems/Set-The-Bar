@@ -2,7 +2,7 @@
 <div class="set-the-bar-search-bar">
   <div class="icon-loupe"></div>
   <form action="/bars/search" method="POST" id="search_bar">
-  <input  type="text" placeholder="Search Location" class="search-input" name="userquery">
+  <input  type="text" placeholder="Search location or bar name" class="search-input" name="userquery">
 </form>
   <div class="icon-mic"></div>  
 </div>
@@ -11,7 +11,7 @@
   
  <div class="carousel-general-container">
     <div class="title-container">
-      <h2 class="title">Trending Bars</h2>
+      <h2 class="title">Bars nearby</h2>
     </div>
     <div class="carousel-container mgtop-25px">
   
@@ -31,11 +31,11 @@
             <span class=stars> 
               <% bar.barrating.forEach((rating) => { %>
                 <% if(rating === "*"){ %>
-                  <i class="fa fa-star" aria-hidden="true" style="color: gold; font-size: 2.5rem;"></i>
+                  <i class="fa fa-star" aria-hidden="true" style="color: white; font-size: 2.5rem;"></i>
                 <% } else if (rating === "/") { %>
-                  <i class="fa fa-star-half-o" aria-hidden="true" style="color: gold; font-size: 2.5rem;"></i>
+                  <i class="fa fa-star-half-o" aria-hidden="true" style="color: white; font-size: 2.5rem;"></i>
                 <% } else { %>
-                  <i class="fa fa-star-o" aria-hidden="true" style="color: gold; font-size: 2.5rem;"></i>                
+                  <i class="fa fa-star-o" aria-hidden="true" style="color: white; font-size: 2.5rem;"></i>                
                 <% } %>
               <% }) %>
             </span>
@@ -52,7 +52,7 @@
   
     </div>
     <div class="title-container mgtop-40px">
-      <h2 class="title">Safest Bars</h2>
+      <h2 class="title">Favorite bars</h2>
     </div>
     <div class="carousel-container mgtop-25px">
       <div class="carousel-row">
@@ -64,7 +64,7 @@
             <div class="carousel-barname">Le tavernier</div>
             <div class="carousel-rating"></div>
           </div>
-          <div class="carousel-heart"></div>
+          <div class="carousel-heart-full"></div>
         </div>
       </div>
       <div class="carousel-row">
@@ -76,7 +76,7 @@
             <div class="carousel-barname">Le tavernier</div>
             <div class="carousel-rating"></div>
           </div>
-          <div class="carousel-heart"></div>
+          <div class="carousel-heart-full"></div>
         </div>
       </div>
       <div class="carousel-row">
@@ -88,7 +88,7 @@
             <div class="carousel-barname">Le tavernier</div>
             <div class="carousel-rating"></div>
           </div>
-          <div class="carousel-heart"></div>
+          <div class="carousel-heart-full"></div>
         </div>
       </div>
   
@@ -105,31 +105,31 @@
     <div class="location-text">My Location</div>
   </div>
   <div class="popular-locations mgtop-40px">
-    <h2 class="title">Popular Locations</h2>
+    <h2 class="title">Popular Locations:</h2>
   </div>
   <div class="location-container">
     <div class="location-logo"></div>
-    <div class="location-text">SomeWhereNearMe</div>
+    <div class="location-text">Popular location</div>
   </div>
   <div class="location-container">
     <div class="location-logo"></div>
-    <div class="location-text">SomeWhereNearMe</div>
+    <div class="location-text">Popular location</div>
   </div>
   <div class="location-container">
     <div class="location-logo"></div>
-    <div class="location-text">SomeWhereNearMe</div>
+    <div class="location-text">Popular location</div>
   </div>
   <div class="location-container">
     <div class="location-logo"></div>
-    <div class="location-text">SomeWhereNearMe</div>
+    <div class="location-text">Popular location</div>
   </div>
   <div class="location-container">
     <div class="location-logo"></div>
-    <div class="location-text">SomeWhereNearMe</div>
+    <div class="location-text">Popular location</div>
   </div>
   <div class="location-container">
     <div class="location-logo"></div>
-    <div class="location-text">SomeWhereNearMe</div>
+    <div class="location-text">Popular location</div>
   </div>
 
 </div>

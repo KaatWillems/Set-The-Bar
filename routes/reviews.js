@@ -28,6 +28,7 @@ router.post("/new/:id", async (req, res) => {
       { _id: req.params.id },
       { $push: { reviews: newReview._id } }
     );
+    // get the lenght of the reviews to calculate average: 
     let reviewsDB = await Bar.find({ _id: req.params.id}, { reviews: 1 });
     let reviewsIds = reviewsDB[0].reviews;
     let length = reviewsIds.length;
@@ -36,6 +37,7 @@ router.post("/new/:id", async (req, res) => {
       hygiene = 0,
       atmosphere = 0,
       safety = 0;
+      //finding all the ids of the reviews and make an array of them, and sum all the values of the reviews
     for (const reviewId of Array.from(reviewsIds)) {
       let reviewDB = await Review.find({ _id: reviewId });
       let review = reviewDB[0];
@@ -45,6 +47,7 @@ router.post("/new/:id", async (req, res) => {
       atmosphere = atmosphere + review.atmosphere;
       safety = safety + review.safety;
     }
+    //updating averages in the Bar model:
       await Bar.findOneAndUpdate(
         { _id: req.params.id },
         {$set: { 
@@ -74,9 +77,9 @@ router.post("/new/:id", async (req, res) => {
 
 router.get("/new/:id", ensureAuthenticated, async (req, res) => {
   const reviewquery = await Bar.findById(req.params.id);
-  //here we should still add populate reviews when we have reviews in the DB  (.populate.Reviews)
+  
 
-  console.log(reviewquery, "console log reviewquery in review.js");
+  //console.log(reviewquery, "console log reviewquery in review.js");
 
   res.render("review", {
     user: req.user,

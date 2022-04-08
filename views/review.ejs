@@ -1,5 +1,6 @@
 <div class="review-container mgtop-80px">
   <div class="review-left-text">
+   <a onclick="window.history.go(-1);"> <button class="backbtn"><</button></a>
       <h1 class="review-letsreview">Let's review </h1>
       <h2 class="bartitle"> <%= bar.name %></h2>
       
@@ -38,7 +39,7 @@
         <p>Hygiene</p>
         <input type="range" min="1" max="9"  class="slider" name="reviewhygiene">
         <div class="labels-hygiene">
-            <span>As clean as it gets</span> <span>Decent</span> <span>Everything's sticky </span>
+            <span>Everything's sticky</span> <span>Decent</span>As clean as it gets<span> </span>
           </div>
        </div> 
   
@@ -53,7 +54,7 @@
         <p>Safety</p>
         <input type="range" min="1" max="9" value="5" class="slider" name="reviewsafety">
        <div class="labels-safety"> 
-         <span>I feel safe</span> <span>Creep alert</span></div>
+         <span>Creep alert</span> <span>I feel safe</span></div>
       </div> 
   
       <div class="review-comments">
