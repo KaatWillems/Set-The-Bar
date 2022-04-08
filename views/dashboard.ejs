@@ -2,7 +2,7 @@
 <div class="set-the-bar-search-bar">
   <div class="icon-loupe"></div>
   <form action="/bars/search" method="POST" id="search_bar">
-  <input  type="text" placeholder="Search Location" class="search-input" name="userquery">
+  <input  type="text" placeholder="Search location or bar name" class="search-input" name="userquery">
 </form>
   <div class="icon-mic"></div>  
 </div>
@@ -31,11 +31,11 @@
             <span class=stars> 
               <% bar.barrating.forEach((rating) => { %>
                 <% if(rating === "*"){ %>
-                  <i class="fa fa-star" aria-hidden="true" style="color: gold; font-size: 2.5rem;"></i>
+                  <i class="fa fa-star" aria-hidden="true" style="color: white; font-size: 2.5rem;"></i>
                 <% } else if (rating === "/") { %>
-                  <i class="fa fa-star-half-o" aria-hidden="true" style="color: gold; font-size: 2.5rem;"></i>
+                  <i class="fa fa-star-half-o" aria-hidden="true" style="color: white; font-size: 2.5rem;"></i>
                 <% } else { %>
-                  <i class="fa fa-star-o" aria-hidden="true" style="color: gold; font-size: 2.5rem;"></i>                
+                  <i class="fa fa-star-o" aria-hidden="true" style="color: white; font-size: 2.5rem;"></i>                
                 <% } %>
               <% }) %>
             </span>
