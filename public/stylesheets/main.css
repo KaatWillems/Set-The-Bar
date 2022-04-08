@@ -514,13 +514,14 @@ a {
   height: 100%;
   display: flex;
   flex-direction: column;
+ 
 }
 
 .carousel-container {
   width: 100%;
   display: flex;
   align-items: center;
-  overflow: scroll;
+  overflow: scroll; /*keep*/
 }
 .carousel-row {
   display: flex;
@@ -661,6 +662,11 @@ font-size: 1.3em;
   width: 100%;
   height: 25%;
 }
+.bar-name {
+  height: 50px;
+  overflow:scroll;
+}
+
 .bar-info {
   width: 80%;
   height: 60%;
@@ -919,25 +925,26 @@ button {
     height: 15.5vh;
     margin-top: -7.5vh;
     display: flex;
+    justify-content: center;
     flex-direction: row;
 }
 .profile-picture {
-    background-image: url("https://i1.sndcdn.com/artworks-ywcx1pUzUGGvjwmH-BUNWRA-t500x500.jpg");
+    /* background-image: url("https://i1.sndcdn.com/artworks-ywcx1pUzUGGvjwmH-BUNWRA-t500x500.jpg"); */
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
-    width: 100%;
-    height: 100%;
+    background-size: cover;
+    width: 130px;
+    height: 130px;
     border-radius: 100%;
 
 
 }
 .profile-picture-empty {
-width: 100%;
+width: 33%;
 height: 100%;
 }
 .profile-pic-plus {
-    background-image: url("https://cdn.discordapp.com/attachments/953201000100024370/961264076393164840/unknown.png");
+    /* background-image: url("https://cdn.discordapp.com/attachments/953201000100024370/961264076393164840/unknown.png"); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -960,7 +967,7 @@ height: 100%;
 .profile-name {
    margin: 1rem; 
 }
-.modify-btn {
+#modify-profile-btn {
     height: 30px;
     border-radius: 70px;
     font-weight: 600;
@@ -1004,4 +1011,101 @@ height: 100%;
   flex-direction: column;
   justify-content:center;
   align-items: center;
+}
+
+#modify-profile-form {
+  height: 15vh;
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.modify-profile-form-container {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+  border: #262626 0.5px dotted;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#send-image-button {
+  height: 30px;
+  border-radius: 70px;
+  font-weight: 600;
+  border: none;
+  width: 150px;
+  color: #4d194d;
+}
+#choose-file-btn {
+
+}
+.update-text {
+  color: #dadada;
+  font-size: 1rem;
+  /* background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 30px;
+  height: 30px; */
+}
+#username-profile {
+  font-size: 1rem;
+  font-family: "Lato", sans-serif;
+  color: #4d194d;
+  background-color: white;
+  border-radius: 8px;
+  width: 60%;
+  height: 3vh;
+  text-align: center;
+  border: none;
+}
+
+.quote-from-stranger-container {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  background: whitesmoke;
+  border-radius: 30px;
+
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  padding: 40px;
+}
+.quote-from-stranger-top {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.quote-from-stranger-bottom {
+  width: 70%;
+  text-align: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-family: "Lato", sans-serif; 
+  font-style: italic;
+  color:#4d194d;
+  
+}
+.quote-name {
+  font-size: 3rem;
+  color:#4d194d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.quote-picture {
+  background-image: url("https://directory.unamur.be/photos/mdewitte-large.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 227px;
+  height: 227px;
+  border-radius: 50%;
 }

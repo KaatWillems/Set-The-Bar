@@ -35,7 +35,7 @@ body {
   font-family: "Lato", sans-serif;
   display: flex;
   flex-direction: column;
-  height:130%;
+  min-height:120%;
   margin-bottom: 80px;
   /* align-items: space-between; */
 }
@@ -56,6 +56,7 @@ body {
   /* border:solid black 2px; */
   text-transform: uppercase;
   font-size: 3rem;
+  width: 800px;
 }
 
 .bartitle {
@@ -63,7 +64,7 @@ body {
   font-size: 4rem;
 }
 
-.review-rating {
+.show-bar-rating {
   background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958709656300159046/unknown.png);
   height: 50px;
   width: 50%;
@@ -107,11 +108,8 @@ body {
   
 }
 
-
-
-
 .explain-meters {
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 30px;
 }
 
@@ -121,6 +119,12 @@ body {
   padding: 10px 30px;
   border-radius: 30px;
   margin-top: 50px;
+  font-size: 2.5rem;
+}
+
+.thanks {
+  margin-top: 50px;
+  font-size: 2rem;
 }
 
 .show-crowd {
@@ -131,7 +135,7 @@ body {
 }
 
 .show-crowd p {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
 }
 
@@ -140,7 +144,7 @@ body {
   justify-content: space-between;
   margin-top: 25px;
   margin-bottom: 20px;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
 }
 
 .show-hygiene {
@@ -151,7 +155,7 @@ body {
 }
 
 .show-hygiene p {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
 }
 
@@ -159,7 +163,14 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
+  /* overflow:visible; */
+  
+}
+
+.show-labels-hygiene span {
+  width: 200px;
+  overflow:visible;
 }
 
 .show-atmosphere {
@@ -169,14 +180,14 @@ body {
 }
 
 .show-atmosphere p {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
 }
 .show-labels-atmo {
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
 }
 
 .show-safety {
@@ -186,7 +197,7 @@ body {
 }
 
 .show-safety p {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
 }
 
@@ -194,12 +205,12 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
 }
 
-/* slider bars: */
+/* slider bars: FOR DETAIL BAR */
 
-.show-slider input[type="range"] {
+ input[type="range"].show-slider, input[type="range"].filter-slider  {
   -webkit-appearance: none !important;
   width: 800px;
   height: 35px;
@@ -212,6 +223,9 @@ body {
     rgb(77, 25, 77)
   );
   background: linear-gradient(90deg, rgb(183, 87, 183), rgb(77, 25, 77));
+
+
+
 
   border: 1px solid var(--purple-bg);
   border-radius: 30px;
@@ -245,13 +259,23 @@ body {
   } */
 
 .show-about {
-  font-size: 3.5rem;
+ 
   margin-top: 50px;
   text-align: left;
   margin-left: 70px;
   margin-right: 70px;
   margin-bottom:70px;
+  width: 800px;
 }
+
+.show-about-title {
+ font-size: 3.5rem;
+}
+
+.show-about-p{
+  font-size: 2rem;
+}
+
 
 /* REVIEW METERS  on review pages*/
 .meters-container {
@@ -318,7 +342,7 @@ body {
 }
 
 .crowd p {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
 }
 
@@ -327,7 +351,7 @@ body {
   justify-content: space-between;
   margin-top: 25px;
   margin-bottom: 20px;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
 }
 
 .hygiene {
@@ -338,7 +362,7 @@ body {
 }
 
 .hygiene p {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
 }
 
@@ -346,7 +370,13 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
+}
+
+.labels-hygiene-span {
+  width: 200px;
+  overflow: visible;
+  
 }
 
 .atmosphere {
@@ -356,14 +386,14 @@ body {
 }
 
 .atmosphere p {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
 }
 .labels-atmo {
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
 }
 
 .safety {
@@ -373,7 +403,7 @@ body {
 }
 
 .safety p {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
 }
 
@@ -381,7 +411,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
 }
 
 .review-comments {
@@ -389,7 +419,7 @@ body {
 }
 
 .review-comments p {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
 }
 .review-comments input {
@@ -406,34 +436,40 @@ body {
   color: white;
   padding: 10px 30px;
   border-radius: 30px;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   margin-top: 50px;
   /* box-shadow: 5px 5px 20px var(--purple-bg) */
 }
 
-.submitbtn-review :hover {
-  /* box-shadow: 5px 5px 20px var(--purple-bg) */
-}
 
-/* slider bars: */
 
-input[type="range"] {
+/* slider bars for REVIEW */
+
+input[type="range"].slider {
   -webkit-appearance: none !important;
   width: 800px;
   height: 35px;
   margin-top: 30px;
 
   /* color bar: */
-  background: -webkit-linear-gradient(
+  /* background: -webkit-linear-gradient(
     90deg,
     rgb(183, 87, 183),
     rgb(77, 25, 77)
   );
-  background: linear-gradient(90deg, rgb(183, 87, 183), rgb(77, 25, 77));
+  background: linear-gradient(90deg, rgb(183, 87, 183), rgb(77, 25, 77)); */
 
-  border: 1px solid var(--purple-bg);
+background: -webkit-linear-gradient(90deg, rgb(172, 234, 222), rgb(23, 139, 141));
+background: linear-gradient(90deg, rgb(172, 234, 222), rgb(23, 139, 141));
+
+/* CHANGE TO GREEN */
+  /* border: 1px solid var(--purple-bg); */
+  border: 1px solid rgb(20, 135, 123);
   border-radius: 30px;
-  box-shadow: 5px 5px 20px var(--purple-bg);
+
+  /* CHANGE TO GREEN */
+  /* box-shadow: 5px 5px 20px var(--purple-bg); */
+  box-shadow: 5px 5px 20px rgb(20, 135, 123) ;
   transition: all 0.3s ease;
 }
 
