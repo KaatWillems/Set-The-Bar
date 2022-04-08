@@ -514,13 +514,14 @@ a {
   height: 100%;
   display: flex;
   flex-direction: column;
+ 
 }
 
 .carousel-container {
   width: 100%;
   display: flex;
   align-items: center;
-  overflow: scroll;
+  overflow: scroll; /*keep*/
 }
 .carousel-row {
   display: flex;
@@ -661,6 +662,11 @@ font-size: 1.3em;
   width: 100%;
   height: 25%;
 }
+.bar-name {
+  height: 50px;
+  overflow:scroll;
+}
+
 .bar-info {
   width: 80%;
   height: 60%;
