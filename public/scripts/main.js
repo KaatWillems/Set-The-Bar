@@ -99,68 +99,67 @@ const getResults = () => {
   return results;
 };
 
-const checkCriteria = (a, b) => {
-  let check;
+const checkRating = (a, b) => {
+  let points;
   if (a <= b) {
-    check = true;
+    points = b + 4
   } else {
-    check = false;
+    points = 0
   }
-  return {check, points: b};
+  return points;
 };
 
-// const getRange = (a) => {
-//   let range;
-//   if (a <= 3) {
-//     range = "first";
-//   } else if (a <= 6 && a >= 4) {
-//     range = "second";
-//   } else if (a <= 9 && a >= 7) {
-//     range = "third";
-//   } else if (a === 0) {
-//     range = "none";
-//   }
-//   return range;
-// };
-
-// const checkRange = (userValue, barValue) => {
-//   let rangeUser = getRange(userValue);
-//   let rangeBar = getRange(barValue);
-//   let check, points;
-//   if (rangeUser === rangeBar) {
-//     check = true;
-//     points = barValue - userValue + 2;
-//   } else {
-//     check = false;
-//     points = -1;
-//   }
-//   return { check, points };
-// };
-
-// const atmosphereRating = (userValue, barValue) => 8 - Math.abs(userValue - barValue)
-// const safetyRating = (userValue, barValue) => 8 + (userValue - barValue)
+const checkRange = (userValue, barValue) => {
+  if (barValue != 0) {
+    points = -Math.abs(barValue - userValue) + 9;
+  } else {
+    points = 0;
+  }
+  return points
+};
+const checkImportance = (userValue, barValue) => {
+    let points
+    if (userValue <= barValue) {
+        points = barValue;
+    } else {
+        points = 0
+    }
+    return points
+}
 
 const compareAndDisplay = (filterValues, barResults) => {
-  let revisions = [];
   barResults.forEach((barResult) => {
-    let revision = {
-      index: barResult.id,
-      rating: checkCriteria(filterValues.rating, barResult.rating),
-    //   crowd: checkRange(filterValues.crowd, barResult.crowd),
-    //   hygiene: checkRange(filterValues.hygiene, barResult.hygiene),
-    //   atmosphere: atmosphereRating(filterValues.atmosphere, barResult.atmosphere),
-    //   safety: safetyRating(filterValues.safety, barResult.safety)
-    };
-    revisions.push(revision);
+    rating = checkRating(filterValues.rating, barResult.rating),
+    crowd = checkRange(filterValues.crowd, barResult.crowd),
+    hygiene = checkImportance(filterValues.hygiene, barResult.hygiene),
+    atmosphere = checkRange(filterValues.atmosphere, barResult.atmosphere),
+    safety =  checkImportance(filterValues.safety, barResult.safety)
+    let match = (rating+crowd+hygiene+atmosphere+safety)
+    barCards.forEach(barCard => {
+        if (barCard.id === barResult.id) {
+            barCard.dataset.match = match
+        }
+    })
   });
-  console.log(revisions);
+  let newOrder = Array.from(barCards)
+  newOrder.sort((a,b) => parseInt(b.dataset.match) - parseInt(a.dataset.match))
+  newOrder.forEach(newOrderCard => {
+      resultsContainer.appendChild(newOrderCard)
+  })
 };
 
 if (applyFilter != undefined) {
   applyFilter.addEventListener("click", async (e) => {
     e.preventDefault();
     let filterValues = getFilterValues();
-    let baresults = getResults();
+    let barResults = getResults();
     compareAndDisplay(filterValues, barResults);
+    searchContainer.style.display = "flex";
+    filterByContainer.style.display = "flex";
+    filterContainer.style.display = "none";
+    resultsContainer.style.display = "flex";
+    body.style.backgroundColor = "#4d194d";
+    setTheLogoWhite.style.display = "flex";
+    setTheLogoPurple.style.display = "none";
   });
 }
