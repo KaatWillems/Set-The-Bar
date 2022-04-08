@@ -8,8 +8,16 @@
   --font-black: black;
 }
 
-/* review page */
+/* 
+=========content:
+line 30 REVIEW PAGE
+line 85 DETAILED BAR PAGE 
+===============*/
 
+/* REVIEW PAGE */   
+
+
+/* not for the review page, but dont touch because itslinked to somewhere else #sorry */
 body {
   box-sizing: border-box;
 
@@ -22,11 +30,12 @@ body {
   min-height: 100vh;
 }
 
+
 .review-container {
   font-family: "Lato", sans-serif;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height:130%;
   margin-bottom: 80px;
   /* align-items: space-between; */
 }
@@ -37,27 +46,21 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  height: fit-content;
+  /* height: fit-content; */
 }
 
-.img-bar {
-  background-image: url(https://picsum.photos/200/300);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  width: 100%;
-  height: 600px;
-}
+
+
 
 .review-letsreview {
   /* border:solid black 2px; */
   text-transform: uppercase;
-  font-size: 3.5rem;
+  font-size: 3rem;
 }
 
 .bartitle {
   margin-top: 20px;
-  font-size: 5rem;
+  font-size: 4rem;
 }
 
 .review-rating {
@@ -69,6 +72,18 @@ body {
   margin-top: 30px;
 }
 /* SHOW METERS READONLY (DETAILED BAR PAGE) /// REVIEW METERS FOR THE REVIEW PAGE ARE BELOW */
+
+/* also uses review container etc */
+
+.img-bar {
+  background-image: url(https://picsum.photos/200/300);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 600px;
+}
+
 .show-meters-container {
   /* border: solid 2px red; */
   display: flex;
@@ -82,6 +97,18 @@ body {
   margin-top: 30px;
   /* width: 100vw; */
 }
+
+.backbtn {
+  background-color: #4d194d;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 30px;
+  margin-bottom: 40px;
+  
+}
+
+
+
 
 .explain-meters {
   font-size: 3rem;
@@ -223,6 +250,7 @@ body {
   text-align: left;
   margin-left: 70px;
   margin-right: 70px;
+  margin-bottom:70px;
 }
 
 /* REVIEW METERS  on review pages*/
@@ -435,47 +463,3 @@ input[type="range"]::-webkit-slider-thumb {
   } */
 
 /*-- Nav-bar -- CSS --*/
-
-.navigation-tab-review {
-  /* border: solid 1px blue; */
-  width: 100%;
-  height: fit-content;
-  background-color: var(--nav-bg);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  position: fixed;
-  bottom: 0;
-}
-.navigation-explore {
-  width: 200px;
-  height: 200px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673304221257778/unknown.png);
-}
-.navigation-review {
-  width: 200px;
-  height: 200px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673629183344701/unknown.png);
-}
-.navigation-favorites {
-  width: 200px;
-  height: 200px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673629380509706/unknown.png);
-}
-.navigation-profile {
-  width: 200px;
-  height: 200px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673629611184128/unknown.png);
-}

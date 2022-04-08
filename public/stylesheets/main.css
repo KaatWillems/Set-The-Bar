@@ -369,11 +369,13 @@ iframe {
 .set-the-bar-moto {
   font-family: "Satisfy", cursive;
   color: white;
+  font-size: 4rem;
 }
 .set-the-bar-intro {
   text-align: center;
   font-family: "Lato", sans-serif;
   color: white;
+  
 }
 .input-info-container {
   display: flex;
@@ -381,14 +383,18 @@ iframe {
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
-  height: 35vh;
+  /* height: 35vh; */
+  margin-top: 70px;
 }
-.input-register-info-container {
+
+
+
+/* .input-register-info-container {
   margin-top: 5vh;
-}
+} */
 .input-info {
   font-size: 3rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
   font-family: "Lato", sans-serif;
   color: #4d194d;
   background-color: white;
@@ -397,6 +403,10 @@ iframe {
   height: 6vh;
   text-align: center;
 }
+
+
+
+
 .connect-with-tier-container {
   margin-top: 3rem;
   font-family: "Lato", sans-serif;
@@ -416,13 +426,13 @@ iframe {
   margin-top: 5px;
 }
 .no-account {
-  margin-top: 8vh;
+  margin-top: 70px;
   font-family: "Lato", sans-serif;
-  color: black;
+  color: white;
   text-align: center;
 }
 .no-account span {
-  color: #006466;
+  color: #4ac0c2;
 }
 a {
   text-decoration: none;
@@ -455,7 +465,7 @@ a {
   background-color: rgba(255, 255, 255, 0.356);
   width: 100%;
   height: 100%;
-  border-radius: 20px;
+  border-radius: 50px;
   text-align: center;
   padding-left: 10px;
   padding-right: 10px;
@@ -480,12 +490,14 @@ a {
 .search-input {
   background-color: #4d194d00;
   border: none;
-  width: 85%;
-  font-size: 1.5em;
+  width: 650px;
+  font-size: 1.3em;
+  padding-left: 30px;
 }
 .search-input::placeholder {
   font-weight: 400;
   color: #4d194d;
+  
 }
 
 .title {
@@ -514,6 +526,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-right:60px;
 }
 .carousel-container::-webkit-scrollbar {
   display: none;
@@ -533,20 +546,42 @@ a {
   height: 20%;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
+  
 }
 
 .carousel-heart {
-  width: 80px;
-  height: 80px;
-  background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958709188039684096/unknown.png);
+  width: 50px;
+  height: 50px;
+  background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/961910441439813712/heart_outline2.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  margin-top:4px;
+  
+  
 }
+
+.carousel-heart:hover {
+  background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/961910441213329498/full_heart.png);
+}
+
+.carousel-heart-full {
+  width: 50px;
+  height: 50px;
+  background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/961910441213329498/full_heart.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-top:4px;
+  
+  
+}
+
+
 .carousel-rating {
-  width: 500px;
+  width: fit-content;
   height: 50px;
 
   /* background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958709656300159046/unknown.png);
@@ -558,7 +593,7 @@ a {
 .carousel-barname {
   font-family: "Lato", sans-serif;
   color: whitesmoke;
-  width: 500px;
+  width: 300px; /* was 500px*/
   height: 50px;
 }
 
@@ -566,17 +601,22 @@ a {
 
 .location-general-container {
   display: flex;
-  font-size: 1.5em;
   flex-direction: column;
   color: #dadada;
 }
+
+.location-text {
+font-size: 1.3em;
+}
+
+
 .location-container {
   display: flex;
   align-items: center;
   margin-top: 40px;
 }
 .location-logo {
-  background-image: url("https://cdn-icons-png.flaticon.com/512/684/684908.png");
+  background-image: url("https://cdn.discordapp.com/attachments/953201000100024370/961927109352239104/Screenshot_2022-04-08_at_11.54.11.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -641,10 +681,10 @@ a {
   height: 100%;
   width: 20%;
 }
-.heart-results {
+/* .heart-results {
   height: 120px;
   width: 120px;
-}
+} */
 
 /*--FILTER --*/
 button {
@@ -652,7 +692,7 @@ button {
   cursor: pointer;
 }
 .filterby-btn {
-  height: 100px;
+  height: 90px;
   border-radius: 70px;
   font-weight: 600;
   border: none;
