@@ -1069,6 +1069,9 @@ height: 100%;
   flex-direction: row;
   background: whitesmoke;
   border-radius: 30px;
+
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  padding: 40px;
 }
 .quote-from-stranger-top {
   height: 100%;
@@ -1082,7 +1085,7 @@ height: 100%;
   width: 70%;
   text-align: center;
   justify-content: center;
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-family: "Lato", sans-serif; 
   font-style: italic;
   color:#4d194d;
