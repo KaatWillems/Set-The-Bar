@@ -14,7 +14,7 @@ const body = document.querySelector("body"),
   reviewContainer = document.querySelector(".review-container"),
   resultsContainer = document.querySelector(".results-container");
   UpdateProfileButton = document.querySelector('#modify-profile-btn');
-  updateWindow = document.querySelector('#modify-profile-form')
+  updateWindow = document.querySelector('.modify-profile-form-container')
   
 
 if (searchInput != undefined) {
@@ -168,5 +168,10 @@ if (applyFilter != undefined) {
 }
 
 UpdateProfileButton.addEventListener('click', () => {
-  updateWindow.style.display='flex'
+  if(updateWindow.style.display == 'flex')
+      updateWindow.style.display='none'
+  else {
+    updateWindow.style.display='flex'
+
+  }    
 })
