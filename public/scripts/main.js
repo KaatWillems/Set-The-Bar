@@ -60,29 +60,31 @@ if (reviewContainer) {
   setTheLogoPurple.style.display = "block";
 }
 
-// // CLEAR BUTTON
+// CLEAR BUTTON
 
-// let clearBtn = document.querySelector(".clear")
+let clearBtn = document.querySelector(".clear")
 
-// clearBtn.addEventListener("click", () => {
+if (clearBtn != undefined) {
+  clearBtn.addEventListener("click", () => {
 
-// //clear the ranges (put them on 5):
-// let filtersliders = document.querySelectorAll(".filter-slider")
+  //clear the ranges (put them on 5):
+    let filtersliders = document.querySelectorAll(".filter-slider")
 
-// for (let i = 0; i < filtersliders.length; i++) {
-//     filtersliders[i].value = "5";
-  
-// }
+    for (let i = 0; i < filtersliders.length; i++){
+        filtersliders[i].value = "5";
+      
+    }
 
-//clear the stars:
-// let starsss = document.querySelectorAll('#star1') 
+    //clear the stars:
+    // let starsss = document.querySelectorAll('#star1') 
 
-// for(let i=0; i < starsss.length; i++) {
-//   starsss[i].checked = false;
-//   //chang ebody.style to white?
-// }
+    // for(let i=0; i < starsss.length; i++) {
+    //   starsss[i].checked = false;
+    //   //chang ebody.style to white?
+    // }
 
-// })
+  })
+}
 
 
 // // FILTERING ALGORITHM
