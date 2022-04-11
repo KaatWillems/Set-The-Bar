@@ -13,8 +13,9 @@ const body = document.querySelector("body"),
   carouselImages = document.querySelectorAll(".carousel-image"),
   reviewContainer = document.querySelector(".review-container"),
   resultsContainer = document.querySelector(".results-container"),
-  updateProfileButton = document.querySelector('#modify-profile-btn'),
-  updateWindow = document.querySelector('.modify-profile-form-container');
+  updateProfileButton = document.querySelector("#modify-profile-btn"),
+  findMeContainer = document.querySelector(".findmeabar-container"),
+  updateWindow = document.querySelector(".modify-profile-form-container");
 
 
 if (searchInput != undefined) {
@@ -53,13 +54,16 @@ if (filterByBtn != undefined) {
   });
 }
 
-if (reviewContainer) {
+const changeColors = () => {
   body.style.backgroundColor = "whitesmoke";
   setTheLogoWhite.style.display = "none";
   setTheLogoPurple.style.display = "block";
 }
+if (reviewContainer) {
+  changeColors()
+}
 
-// // CLEAR BUTTON
+// CLEAR BUTTON
 
 let clearBtn = document.querySelector(".clear")
 
@@ -85,7 +89,6 @@ if (clearBtn != undefined) {
 
   })
 }
-
 
 
 // FILTERING ALGORITHM
@@ -217,9 +220,9 @@ const sendBarIdToBrain = (newId) => {
 carrouselHearts.forEach((heart) => {
   heart.addEventListener("click", (e) => {
     if (heart.classList.length === 2) {
-      heart.classList.remove("carousel-heart-full")
+      heart.classList.remove("carousel-heart-full");
     } else {
-      heart.classList.add("carousel-heart-full")
+      heart.classList.add("carousel-heart-full");
     }
     let object;
     if (heart.dataset.action === "add") {
@@ -231,13 +234,22 @@ carrouselHearts.forEach((heart) => {
   });
 });
 
-if (updateProfileButton != undefined) {
-  updateProfileButton.addEventListener('click', () => {
-    if(updateWindow.style.display == 'flex')
-        updateWindow.style.display='none'
-    else {
-      updateWindow.style.display='flex'
 
-    }    
-  })
+// UPDATE PROFILE
+
+if (updateProfileButton != undefined) {
+  updateProfileButton.addEventListener("click", () => {
+    if (updateWindow.style.display == "flex")
+      updateWindow.style.display = "none";
+    else {
+      updateWindow.style.display = "flex";
+    }
+  });
+}
+
+// FIND ME A BAR
+
+if (findMeContainer) {
+  changeColors()
+  setTheLogoPurple.style.display = "none";
 }

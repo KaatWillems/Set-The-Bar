@@ -1,0 +1,59 @@
+<div class="findmeabar-container">
+  <div class="findme-image-container">
+    <a href="/bars/show/<%= bars[0]._id %>">
+    <div class="findme-bar-image" style=background-image:url(../static/assets/barimages/<%=Math.round((Math.random()*9)+1)%>.jpg)%>></div></a>
+    <h3 class="mgtop-40px">Your best match is: </h3>
+    <h2 class="mgtop-40px"><%= bars[0].name %></h2>
+    <span class="stars mgtop-40px"> 
+        <% bars[0].stars.forEach((rating) => { %>
+          <% if(rating === "*"){ %>
+            <i class="fa fa-star" aria-hidden="true" style="color: white; font-size: 2.5rem;"></i>
+          <% } else if (rating === "/") { %>
+            <i class="fa fa-star-half-o" aria-hidden="true" style="color: white; font-size: 2.5rem;"></i>
+          <% } else { %>
+            <i class="fa fa-star-o" aria-hidden="true" style="color: white; font-size: 2.5rem;"></i>                
+          <% } %>
+        <% }) %>
+      </span>
+      <p class="mgtop-25px">with <%= bars[0].reviews.length %> reviews.</p>
+  </div>
+  <div class="display-more">
+      <span class="more-results">More options <div class="arrow"></div> </span>
+  </div>
+  <div class="more">
+  <div class="carousel-container mgtop-25px">
+    <% bars.forEach((bar,index) => { %>
+        <% if(index != 0) { %> 
+      <div class="carousel-row">
+
+        <a href="/bars/show/<%= bar._id %>">
+        <div class="carousel-image" style=background-image:url(../static/assets/barimages/<%=Math.round((Math.random()*9)+1)%>.jpg)>
+          
+        </div></a>
+        <div class="carousel-text-container mgtop-10px">
+          <div class="carousel-text ">
+            <div class="carousel-barname"><%= bar.name %></div>
+            <div class="carousel-rating">
+            
+            <span class=stars> 
+              <% bar.stars.forEach((rating) => { %>
+                <% if(rating === "*"){ %>
+                  <i class="fa fa-star" aria-hidden="true" style="color: white; font-size: 2.5rem;"></i>
+                <% } else if (rating === "/") { %>
+                  <i class="fa fa-star-half-o" aria-hidden="true" style="color: white; font-size: 2.5rem;"></i>
+                <% } else { %>
+                  <i class="fa fa-star-o" aria-hidden="true" style="color: white; font-size: 2.5rem;"></i>                
+                <% } %>
+              <% }) %>
+            </span>
+            </div>
+          </div>
+          <span>10%</span>
+        </div>
+      </div>
+    <% }%> 
+  
+      <% }) %>
+    </div>
+</div>
+</div>
