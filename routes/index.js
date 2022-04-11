@@ -24,9 +24,6 @@ router.get('/review', (req,res)=>{
 })
 
 //review page //THESE LINES STILL NEED TO BE ADDED ON MASTER 
-router.get('/favorites', (req,res)=>{
-  res.render('favoritebars');
-})
 //detailed bar page//THESE LINES STILL NEED TO BE ADDED ON MASTER 
 // router.get('/show', (req,res)=>{
 //   res.render('bardetail');
@@ -80,18 +77,24 @@ const getStars = (bar) => {
 
 router.get('/dashboard',ensureAuthenticated, async (req,res)=>{
     if(!req.user.Profile){
+      let favorites = await Profile.findOne({_id: req.user.profile._id})
+      let favoriteBars = favorites.favoritebars.map(favbar => {
+        return favbar.toString()
+      })
 
       bararr = []
-
       let bars = await Bar.find()
       bars.forEach((bar) => {
         bararr.push({bar: bar, barrating: getStars(bar)})
       })
+      
+      console.log(favoriteBars)
       //console.log(bararr)
       // let trendingbars
       res.render('dashboard',{
         user: req.user,
         bars: bararr,
+        favoritebars: favoriteBars
 
       });
     }else{
