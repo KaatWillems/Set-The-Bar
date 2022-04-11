@@ -54,7 +54,7 @@ router.post("/upload", ensureAuthenticated, async (req, res) => {
       }
     )
 
-    res.redirect(`/dashboard`);
+    res.redirect(req.get('referer'));
   } catch (err) {
     console.log("ERROR : ", err);
     res.redirect("/dashboard");
