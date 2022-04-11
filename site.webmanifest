@@ -1,6 +1,7 @@
 {
     "name": "Set The Bar",
     "short_name": "Set The Bar",
+    "scope": "./",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -15,7 +16,7 @@
     ],
     "theme_color": "#4d194d",
     "background_color": "#4d194d",
-    "start_url": "https://set-the-bar.herokuapp.com/",
+    "start_url": "https://set-the-bar.herokuapp.com/dashboard",
     "display": "standalone",
     "orientation": "portrait"
 }
