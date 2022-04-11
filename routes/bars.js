@@ -12,9 +12,11 @@ const { ensureAuthenticated } = require("../config/auth");
 // this function is also called in index.js and should be imported (check how)
 const getStars = (entry) => {
   let rating = entry;
-  ratingarr = rating.split(".");
+   ratingarr = rating.split(".");
+  
   //console.log(ratingarr)
   starNbr = parseInt(ratingarr[0]);
+  
   //console.log(starNbr)
   let finalArr = [];
   for (let i = 0; i < starNbr; i++) {
@@ -26,8 +28,23 @@ const getStars = (entry) => {
     finalArr.push(" ");
   }
 
-  return finalArr;
+  // return finalArr;
+  let blankArr = [" ", " ", " ", " ", " "]
+
+  finalArr.forEach((el, i) => {
+
+    blankArr[i] = el
+
+  })
+  console.log("blankarr", blankArr)
+  console.log("finalarr", finalArr)
+  return blankArr
+  
+
 };
+
+
+
 
 router.post("/search", ensureAuthenticated, async (req, res) => {
   
@@ -98,6 +115,11 @@ router.get("/search", async (req, res) => {
   router.get("/show/:id",ensureAuthenticated,  async (req, res) => {
     const barquery = await Bar.findById(req.params.id).populate("averages")
 
+    const stars= getStars(barquery.averages[0].rating.toString())
+
+      console.log("barquery", stars)
+      
+
     // populates = reading averages and printing them in the detailed bar page
     
     //console.log(barquery)
@@ -110,6 +132,7 @@ router.get("/search", async (req, res) => {
     res.render("bardetail", {
       bar: barquery,
       user: req.user,
+      stars: stars
     });
   });
 
