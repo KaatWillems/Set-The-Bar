@@ -42,7 +42,7 @@
             </span>
             </div>
           </div>
-            <% if(favoritebars.includes(bar.bar._id.toString())){ %> 
+            <% if(favoritebarsids.includes(bar.bar._id.toString())){ %> 
           <div class="carousel-heart carousel-heart-full" data-action="remove" data-barid=<%= bar.bar._id %>></div>
           <% } else { %>
             <div class="carousel-heart" data-action="add" data-barid=<%= bar.bar._id %>></div>
@@ -61,48 +61,49 @@
       <h2 class="title">Favorite bars</h2>
     </div>
     <div class="carousel-container mgtop-25px">
-      <div class="carousel-row">
-        <div class="carousel-image" style=background-image:url(../static/assets/barimages/<%=Math.round((Math.random()*9)+1)%>.jpg)>
+      <% favoritebars.forEach((bar) => { %>
+        <div class="carousel-row">
   
-        </div>
-        <div class="carousel-text-container mgtop-10px">
-          <div class="carousel-text ">
-            <div class="carousel-barname">Le tavernier</div>
-            <div class="carousel-rating"></div>
-          </div>
-          <div class="carousel-heart-full"></div>
-        </div>
-      </div>
-      <div class="carousel-row">
-        <div class="carousel-image" style=background-image:url(../static/assets/barimages/<%=Math.round((Math.random()*9)+1)%>.jpg)>
+          <a href="/bars/show/<%= bar._id %>">
+          <div class="carousel-image" style=background-image:url(../static/assets/barimages/<%=Math.round((Math.random()*9)+1)%>.jpg)>
+            
+          
+    
+          </div></a>
+          <div class="carousel-text-container mgtop-10px">
+            <div class="carousel-text ">
+              <div class="carousel-barname"><%= bar.name %></div>
+              <div class="carousel-rating">
+              
+              <span class=stars> 
+                <% bar.stars.forEach((rating) => { %>
+                  <% if(rating === "*"){ %>
+                    <i class="fa fa-star" aria-hidden="true" style="color: white; font-size: 2.5rem;"></i>
+                  <% } else if (rating === "/") { %>
+                    <i class="fa fa-star-half-o" aria-hidden="true" style="color: white; font-size: 2.5rem;"></i>
+                  <% } else { %>
+                    <i class="fa fa-star-o" aria-hidden="true" style="color: white; font-size: 2.5rem;"></i>                
+                  <% } %>
+                <% }) %>
+              </span>
+              </div>
+            </div>
+              <% if(favoritebarsids.includes(bar._id.toString())){ %> 
+            <div class="carousel-heart carousel-heart-full" data-action="remove" data-barid=<%= bar._id %>></div>
+            <% } else { %>
+              <div class="carousel-heart" data-action="add" data-barid=<%= bar._id %>></div>
+              <% } %>
   
-        </div>
-        <div class="carousel-text-container">
-          <div class="carousel-text mgtop-10px">
-            <div class="carousel-barname">Le tavernier</div>
-            <div class="carousel-rating"></div>
           </div>
-          <div class="carousel-heart-full"></div>
         </div>
-      </div>
-      <div class="carousel-row">
-        <div class="carousel-image" style=background-image:url(../static/assets/barimages/<%=Math.round((Math.random()*9)+1)%>.jpg)>
-  
-        </div>
-        <div class="carousel-text-container mgtop-10px">
-          <div class="carousel-text">
-            <div class="carousel-barname">Le tavernier</div>
-            <div class="carousel-rating"></div>
-          </div>
-          <div class="carousel-heart-full"></div>
-        </div>
+      
+    
+        <% }) %>
       </div>
   
     </div>
  </div>
   
-</div>
-
 
 
 <div class="location-general-container mgtop-80px" style="display: none;" >

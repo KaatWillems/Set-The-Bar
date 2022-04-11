@@ -62,6 +62,10 @@ if (reviewContainer) {
 // // CLEAR BUTTON
 
 // let clearBtn = document.querySelector(".clear")
+<<<<<<< HEAD
+=======
+
+>>>>>>> 166ee5248305c7b23e3f69d334d279a54512e1cb
 
 if (clearBtn != undefined) {
   clearBtn.addEventListener("click", () => {
@@ -84,6 +88,7 @@ if (clearBtn != undefined) {
 
   })
 }
+
 
 
 // FILTERING ALGORITHM
