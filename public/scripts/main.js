@@ -230,11 +230,13 @@ carrouselHearts.forEach((heart) => {
   });
 });
 
-updateProfileButton.addEventListener('click', () => {
-  if(updateWindow.style.display == 'flex')
-      updateWindow.style.display='none'
-  else {
-    updateWindow.style.display='flex'
+if (updateProfileButton != undefined) {
+  updateProfileButton.addEventListener('click', () => {
+    if(updateWindow.style.display == 'flex')
+        updateWindow.style.display='none'
+    else {
+      updateWindow.style.display='flex'
 
-  }    
-})
+    }    
+  })
+}
