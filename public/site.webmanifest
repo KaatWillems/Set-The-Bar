@@ -1,7 +1,6 @@
 {
     "name": "Set The Bar",
     "short_name": "Set The Bar",
-    "scope": "./",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",

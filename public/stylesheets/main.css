@@ -9,6 +9,8 @@ Flexbox and floats are used as a fallback so that browsers which don't support g
 */
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Satisfy&display=swap"); /* Base Styles */
 
+
+
 *,
 *::before,
 *::after {
@@ -349,14 +351,14 @@ iframe {
   background-position: center;
 }
 .set-the-logo-purple {
-    display: none;
-    height: 150px;
-    width: 600px;
-    background-image: url("../assets/img/purple-logo.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-  }
+  display: none;
+  height: 150px;
+  width: 600px;
+  background-image: url("../assets/img/purple-logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
 .set-the-bar-text {
   display: flex;
   flex-direction: column;
@@ -376,7 +378,6 @@ iframe {
   text-align: center;
   font-family: "Lato", sans-serif;
   color: white;
-  
 }
 .input-info-container {
   display: flex;
@@ -387,8 +388,6 @@ iframe {
   /* height: 35vh; */
   margin-top: 70px;
 }
-
-
 
 /* .input-register-info-container {
   margin-top: 5vh;
@@ -404,9 +403,6 @@ iframe {
   height: 6vh;
   text-align: center;
 }
-
-
-
 
 .connect-with-tier-container {
   margin-top: 3rem;
@@ -498,7 +494,6 @@ a {
 .search-input::placeholder {
   font-weight: 400;
   color: #4d194d;
-  
 }
 
 .title {
@@ -515,7 +510,6 @@ a {
   height: 100%;
   display: flex;
   flex-direction: column;
- 
 }
 
 .carousel-container {
@@ -523,14 +517,14 @@ a {
   display: flex;
   align-items: center;
   overflow-x: auto;
-  overflow-y: hidden; 
-  white-space: nowrap; 
+  overflow-y: hidden;
+  white-space: nowrap;
 }
 .carousel-row {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-right:60px;
+  margin-right: 60px;
 }
 .carousel-container::-webkit-scrollbar {
   display: none;
@@ -552,7 +546,6 @@ a {
   flex-direction: row;
   /* align-items: center; */
   justify-content: space-between;
-  
 }
 
 .carousel-heart {
@@ -562,9 +555,7 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  margin-top:4px;
-  
-  
+  margin-top: 4px;
 }
 
 .carousel-heart:hover {
@@ -578,11 +569,8 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  margin-top:4px;
-  
-  
+  margin-top: 4px;
 }
-
 
 .carousel-rating {
   width: fit-content;
@@ -610,9 +598,8 @@ a {
 }
 
 .location-text {
-font-size: 1.3em;
+  font-size: 1.3em;
 }
-
 
 .location-container {
   display: flex;
@@ -667,7 +654,7 @@ font-size: 1.3em;
 }
 .bar-name {
   height: 50px;
-  overflow:scroll;
+  overflow: scroll;
 }
 
 .bar-info {
@@ -867,8 +854,8 @@ button {
 .navigation-explore {
   background-image: url(../assets/img/logoexplore.png);
 }
-.navigation-review {
-  background-image: url(../assets/img/pencil.png)
+.navigation-home {
+  background-image: url(../assets/img/home.png);
 }
 .navigation-profile {
   background-image: url(../assets/img/profile.png);
@@ -890,36 +877,35 @@ button {
 
 /*-- profil -- CSS --*/
 
-
 .background-cover-container {
-    width: 100vw;
-    height: 30vh;
-    background-image: url("https://i.imgur.com/p03MfXp.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: "Lato", sans-serif;
-    font-size: 1.5rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-
+  width: 100vw;
+  height: 30vh;
+  background-image: url("https://i.imgur.com/p03MfXp.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Lato", sans-serif;
+  font-size: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 .background-text {
-    color: white;
-    z-index: 2;
+  color: white;
+  z-index: 2;
 }
 .background-settings {
-    background-image: url("https://cdn.discordapp.com/attachments/953201000100024370/961263502419451995/unknown.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    height: 30px;
-    width: 30px;
+  background-image: url("https://cdn.discordapp.com/attachments/953201000100024370/961263502419451995/unknown.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 30px;
+  width: 30px;
 }
 .profile-picture-container {
+
     width: 100vw;
     height: 15.5vh;
     margin-top: -9.5vh;
@@ -928,60 +914,57 @@ button {
     flex-direction: row;
 }
 .profile-picture {
-    /* background-image: url("https://i1.sndcdn.com/artworks-ywcx1pUzUGGvjwmH-BUNWRA-t500x500.jpg"); */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 130px;
-    height: 130px;
-    border-radius: 100%;
-
-
+  /* background-image: url("https://i1.sndcdn.com/artworks-ywcx1pUzUGGvjwmH-BUNWRA-t500x500.jpg"); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 130px;
+  height: 130px;
+  border-radius: 100%;
 }
 .profile-picture-empty {
-width: 33%;
-height: 100%;
+  width: 33%;
+  height: 100%;
 }
 .profile-pic-plus {
-    /* background-image: url("https://cdn.discordapp.com/attachments/953201000100024370/961264076393164840/unknown.png"); */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    height: 20px;
-    width: 20px;
-    
+  /* background-image: url("https://cdn.discordapp.com/attachments/953201000100024370/961264076393164840/unknown.png"); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 20px;
+  width: 20px;
 }
 .profile-info-container {
   margin-top: 30px;
   background-color: #4d194d;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    font-size: 1rem;
-    font-family: "Lato", sans-serif;
-    color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 1rem;
+  font-family: "Lato", sans-serif;
+  color: white;
 }
 .profile-name {
-   margin: 1rem; 
+  margin: 1rem;
 }
 #modify-profile-btn {
-    height: 30px;
-    border-radius: 70px;
-    font-weight: 600;
-    border: none;
-    width: 150px;
-    color: #4d194d;
+  height: 30px;
+  border-radius: 70px;
+  font-weight: 600;
+  border: none;
+  width: 150px;
+  color: #4d194d;
 }
 .review-container-profile {
-    background-color:#4d194d;
-    width: 100vw;
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: #4d194d;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .review-box-container {
   margin-top: 30px;
@@ -992,25 +975,24 @@ height: 100%;
     justify-content: center;
     font-size: 1rem;
     font-family: "Lato", sans-serif;  
+
 }
 .review-box-review-number {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 .recent-visited-bar {
-    background-color: #4d90fe;
-    width: 300px;
-    height: 200px;
-    margin: 20px;
+  background-color: #4d90fe;
+  width: 300px;
+  height: 200px;
+  margin: 20px;
 }
-
-
 
 .favorites-main-container {
   margin-top: 2rem;
   color: #ffffff;
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
 }
 
@@ -1040,7 +1022,6 @@ height: 100%;
   color: #4d194d;
 }
 #choose-file-btn {
-
 }
 .update-text {
   color: #dadada;
@@ -1081,7 +1062,6 @@ height: 100%;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-
 }
 .quote-from-stranger-bottom {
   width: 60vw;
@@ -1092,14 +1072,13 @@ height: 100%;
   text-align: center;
   justify-content: center;
   font-size: 3rem;
-  font-family: "Lato", sans-serif; 
+  font-family: "Lato", sans-serif;
   font-style: italic;
-  color:#4d194d;
-  
+  color: #4d194d;
 }
 .quote-name {
   font-size: 3rem;
-  color:#4d194d;
+  color: #4d194d;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1115,6 +1094,60 @@ height: 100%;
   height: 227px;
   border-radius: 50%;
 }
+
+
+/* FIND ME A BAR */
+
+.findmeabar-container {
+  width: 100%;
+  display: flex;
+  background-color: #4d194d;
+  border-radius: 40px;
+  color: white;
+  flex-direction: column;
+}
+.findme-image-container {
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 50px;
+}
+.findme-bar-image {
+  height: 400px;
+  width: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.display-more {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  border-top: solid 1px whitesmoke;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+}
+.more-results {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #a9a9a9;
+}
+.arrow {
+  margin-left: 20px;
+  background-image: url(../assets/img/arrow.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 40px;
+  width: 40px;
+}
+.more {
+  padding: 50px;
+}
+
+
 .quote-picture-diogo {
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-QgSsMRsAiEP8skZziypEI4_imKWwC61L1kmQml4&s");
   background-repeat: no-repeat;
@@ -1143,3 +1176,4 @@ height: 100%;
   /* white-space: nowrap; */
   
 }
+

@@ -65,7 +65,7 @@ body {
 }
 
 .show-bar-rating {
-  background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958709656300159046/unknown.png);
+  /* background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958709656300159046/unknown.png); */
   height: 50px;
   width: 50%;
   background-size: contain;
