@@ -1113,6 +1113,24 @@ height: 100%;
   height: 227px;
   border-radius: 50%;
 }
+.quote-picture-diogo {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-QgSsMRsAiEP8skZziypEI4_imKWwC61L1kmQml4&s");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 227px;
+  height: 227px;
+  border-radius: 50%;
+}
+.quote-picture-micha   {
+  background-image: url("https://cdn.discordapp.com/attachments/953201000100024370/963019185766666330/unknown.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 227px;
+  height: 227px;
+  border-radius: 50%;
+}
 .quote-slider {
   /* width: 100vw; */
   display: flex;
