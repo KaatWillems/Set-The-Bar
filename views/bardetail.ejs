@@ -3,7 +3,15 @@
         <div class="img-bar" style=background-image:url(../../static/assets/barimages/<%=Math.round((Math.random()*9)+1)%>.jpg)></div>
         <h2 class="bartitle"> <%= bar.name %></h2>
         <div class="show-bar-rating">
-               
+          <% stars.forEach((rating) => { %>
+            <% if(rating === "*"){ %>
+              <i class="fa fa-star" aria-hidden="true" style="color: gold; font-size: 2.5rem;"></i>
+            <% } else if (rating === "/") { %>
+              <i class="fa fa-star-half-o" aria-hidden="true" style="color: gold; font-size: 2.5rem;"></i>
+            <% } else { %>
+              <i class="fa fa-star-o" aria-hidden="true" style="color: gold; font-size: 2.5rem;"></i>                
+            <% } %>
+          <% }) %>
           
           
           </div>     
@@ -18,7 +26,7 @@
     <form>
         <div class="show-crowd"> 
             <p>Crowd</p>
-            <input type="range" min="1" max="9" value="<%= bar.averages[0].rating %>" class="show-slider" disabled>
+            <input type="range" min="1" max="9" value="<%= bar.averages[1].rating %>" class="show-slider" disabled>
     
            <div class="show-labels-crowd"> 
                 <span>Pretty quiet</span> <span>Room for more</span> <span>Full house</span>
@@ -27,7 +35,7 @@
     
         <div class="show-hygiene"> 
           <p>Hygiene</p>
-          <input type="range" min="1" max="9" value="<%= bar.averages[1].rating %>"  class="show-slider" disabled>
+          <input type="range" min="1" max="9" value="<%= bar.averages[2].rating %>"  class="show-slider" disabled>
           <div class="show-labels-hygiene">
               <span>Everything's sticky</span> <span>Decent</span> <span>As clean as it gets</span>
             </div>
@@ -35,14 +43,14 @@
     
         <div class="show-atmosphere"> 
           <p>Atmosphere</p>
-          <input type="range" min="1" max="9" value="<%= bar.averages[2].rating %>" class="show-slider" disabled>
+          <input type="range" min="1" max="9" value="<%= bar.averages[3].rating %>" class="show-slider" disabled>
           <div class="show-labels-atmo">
             <span>Dancing</span> <span>Chatting</span></div>
         </div> 
     
         <div class="show-safety"> 
           <p>Safety</p>
-          <input type="range" min="1" max="9" value="<%= bar.averages[3].rating %>" class="show-slider" disabled>
+          <input type="range" min="1" max="9" value="<%= bar.averages[4].rating %>" class="show-slider" disabled>
          <div class="show-labels-safety"> 
            <span>Creep alert</span> <span>People feel safe</span></div>
         </div> 
