@@ -860,23 +860,19 @@ button {
 .nav-button {
   display: flex;
   cursor: pointer;
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-size: contain;
 }
 .navigation-explore {
-  background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673304221257778/unknown.png);
+  background-image: url(../assets/img/logoexplore.png);
 }
 .navigation-review {
-  background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673629183344701/unknown.png);
-}
-.navigation-favorites {
-  background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673629380509706/unknown.png);
+  background-image: url(../assets/img/pencil.png)
 }
 .navigation-profile {
-  background-image: url(https://cdn.discordapp.com/attachments/953201000100024370/958673629611184128/unknown.png);
+  background-image: url(../assets/img/profile.png);
 }
 
 /* PRESET CLASSES */
