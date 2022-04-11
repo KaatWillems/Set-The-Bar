@@ -75,11 +75,12 @@ if (clearBtn != undefined) {
     }
 
     //clear the stars:
-    let starsss = document.querySelectorAll('#star1') 
+   
+    let stars2 = document.querySelectorAll('input[name=reviewstars]');
 
-    for(let i=0; i < starsss.length; i++) {
-      starsss[i].checked = false;
-      //chang ebody.style to white?
+    for(let i=0; i < stars2.length; i++) {
+      stars2[i].checked = false;
+      
     }
 
   })
