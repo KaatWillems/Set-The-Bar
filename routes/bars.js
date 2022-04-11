@@ -36,8 +36,8 @@ const getStars = (entry) => {
     blankArr[i] = el
 
   })
-  console.log("blankarr", blankArr)
-  console.log("finalarr", finalArr)
+  //console.log("blankarr", blankArr)
+  //console.log("finalarr", finalArr)
   return blankArr
   
 
@@ -117,7 +117,7 @@ router.get("/search", async (req, res) => {
 
     const stars= getStars(barquery.averages[0].rating.toString())
 
-      console.log("barquery", stars)
+      //console.log("barquery", stars)
       
 
     // populates = reading averages and printing them in the detailed bar page
