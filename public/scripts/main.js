@@ -64,7 +64,7 @@ if (reviewContainer) {
 
 // CLEAR BUTTON
 
-// let clearBtn = document.querySelector(".clear")
+let clearBtn = document.querySelector(".clear")
 
 
 if (clearBtn != undefined) {
