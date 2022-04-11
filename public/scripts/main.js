@@ -17,6 +17,7 @@ const body = document.querySelector("body"),
   findMeContainer = document.querySelector(".findmeabar-container"),
   updateWindow = document.querySelector(".modify-profile-form-container");
 
+
 if (searchInput != undefined) {
   searchInput.addEventListener("focus", () => {
     locationDiv.style.display = "flex";
@@ -66,17 +67,17 @@ if (reviewContainer) {
 
 let clearBtn = document.querySelector(".clear")
 
-if (clearBtn != undefined) {
-  clearBtn.addEventListener("click", () => {
+ if (clearBtn != undefined) {
+   clearBtn.addEventListener("click", () => {
 
-  //clear the ranges (put them on 5):
-    let filtersliders = document.querySelectorAll(".filter-slider")
+   //clear the ranges (put them on 5):
+let filtersliders = document.querySelectorAll(".filter-slider")
+
 
     for (let i = 0; i < filtersliders.length; i++){
         filtersliders[i].value = "5";
 
     }
-
     //clear the stars:
     // let starsss = document.querySelectorAll('#star1')
 
@@ -85,8 +86,8 @@ if (clearBtn != undefined) {
     //   //chang ebody.style to white?
     // }
 
-  })
-}
+//   })
+// }
 
 // FILTERING ALGORITHM
 
