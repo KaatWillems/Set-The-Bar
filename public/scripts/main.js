@@ -12,8 +12,8 @@ const body = document.querySelector("body"),
   xBtn = document.querySelector(".x"),
   carouselImages = document.querySelectorAll(".carousel-image"),
   reviewContainer = document.querySelector(".review-container"),
-  resultsContainer = document.querySelector(".results-container");
-  UpdateProfileButton = document.querySelector('#modify-profile-btn');
+  resultsContainer = document.querySelector(".results-container"),
+  updateProfileButton = document.querySelector('#modify-profile-btn'),
   updateWindow = document.querySelector('.modify-profile-form-container');
 
 
@@ -63,16 +63,16 @@ if (reviewContainer) {
 
 // let clearBtn = document.querySelector(".clear")
 
-if (clearBtn != undefined) {
-  clearBtn.addEventListener("click", () => {
+// if (clearBtn != undefined) {
+//   clearBtn.addEventListener("click", () => {
 
-  //clear the ranges (put them on 5):
-    let filtersliders = document.querySelectorAll(".filter-slider")
+//   //clear the ranges (put them on 5):
+//     let filtersliders = document.querySelectorAll(".filter-slider")
 
-    for (let i = 0; i < filtersliders.length; i++){
-        filtersliders[i].value = "5";
+//     for (let i = 0; i < filtersliders.length; i++){
+//         filtersliders[i].value = "5";
       
-    }
+//     }
 
     //clear the stars:
     // let starsss = document.querySelectorAll('#star1') 
@@ -82,8 +82,8 @@ if (clearBtn != undefined) {
     //   //chang ebody.style to white?
     // }
 
-  })
-}
+//   })
+// }
 
 
 
@@ -230,7 +230,7 @@ carrouselHearts.forEach((heart) => {
   });
 });
 
-UpdateProfileButton.addEventListener('click', () => {
+updateProfileButton.addEventListener('click', () => {
   if(updateWindow.style.display == 'flex')
       updateWindow.style.display='none'
   else {
