@@ -952,6 +952,7 @@ height: 100%;
     
 }
 .profile-info-container {
+  margin-top: 30px;
   background-color: #4d194d;
     width: 100vw;
     height: 100vh;
