@@ -984,6 +984,7 @@ height: 100%;
     align-items: center;
 }
 .review-box-container {
+  margin-top: 30px;
     width: 30%;
     height: 80%;
     display: flex;
