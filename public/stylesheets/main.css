@@ -33,6 +33,16 @@ body {
   margin-bottom: 15vh;
 }
 
+@media only screen and (min-width: 900px) {
+  .inner-body {
+    padding-left:200px;
+    padding-right:200px;
+    font-size: smaller;
+  }
+
+
+}
+
 .review-container {
   background-color: whitesmoke;
 }
@@ -335,6 +345,23 @@ iframe {
   display: flex;
   flex-direction: column;
 }
+/* desktop version */
+@media only screen and (min-width: 900px) {
+ 
+  input.input-info {
+    width: 500px;
+    font-size: 20pt;
+  }
+
+  button.btn-primary.btn-block.input-info {
+    
+    width: 500px;
+    font-size:20pt;
+  }
+
+
+}
+
 .header {
   margin-top: 4vh;
   display: flex;
@@ -379,6 +406,17 @@ iframe {
   font-family: "Lato", sans-serif;
   color: white;
 }
+
+@media only screen and (min-width: 900px) {
+  .set-the-bar-moto {
+    font-size: 3rem;
+    margin-top:20px;
+  }
+  .set-the-bar-intro {
+    font-size: 2rem;
+    }
+}
+
 .input-info-container {
   display: flex;
   flex-direction: column;
@@ -422,6 +460,17 @@ iframe {
 .tier-text {
   margin-top: 5px;
 }
+
+@media only screen and (min-width: 900px) {
+  .tier-text {
+   font-size:20pt;
+  }
+
+  .no-account {
+    font-size:20pt;
+  }
+}
+
 .no-account {
   margin-top: 70px;
   font-family: "Lato", sans-serif;
@@ -657,6 +706,18 @@ a {
   overflow: scroll;
 }
 
+@media only screen and (min-width:900px) {
+  .bar-name {
+    overflow:visible;
+  }
+
+  .bar-card {
+    height: 450px;
+    
+  }
+
+}
+
 .bar-info {
   width: 80%;
   height: 60%;
@@ -829,6 +890,32 @@ button {
 
 /*-- Nav-bar -- CSS --*/
 
+@media only screen and (min-width: 900px){
+  /* .nav-button {
+      height: 30px;
+      width: 30px;
+  }
+  .navigation-tab {
+    
+    height: 30px;
+    
+  }
+  .nav-links {
+    height: 30px;
+  } */
+  .nav-button.navigation-explore {
+    height: 50px;
+  }
+  .nav-button.navigation-home {
+    height: 50px;
+  }
+  .nav-button.navigation-profile {
+    height: 50px;
+  }
+
+
+}
+
 .navigation-tab {
   width: 100vw;
   height: 8vh;
@@ -839,6 +926,7 @@ button {
   position: fixed;
   bottom: 0;
 }
+
 .nav-links {
   height: 100%;
   width: 100%;
@@ -1044,6 +1132,50 @@ button {
   border: none;
 }
 
+@media only screen and (min-width: 900px) {
+  div.quote-from-stranger-container{ 
+    background-color: blue;
+    /* margin-right: 60px; */
+    width: 800px;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    background: whitesmoke;
+    border-radius: 30px;
+    /* margin-top: 40px; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    /* padding: 40px; */
+  }
+
+  div.quote-from-stranger-top {
+    height: fit-content;
+    
+    
+    
+  }
+
+  div.quote-from-stranger-bottom {
+    height: fit-content;
+    font-size:2.5rem;
+    
+  }
+  div.quote-picture {
+    height: 200px;
+    width: 200px;;
+  }
+div.quote-picture-diogo {
+  height: 200px;
+  width: 200px;
+}
+
+  div.quote-name {
+    font-size:20pt;
+  }
+
+}
+
+
+
 .quote-from-stranger-container {
   margin-right: 60px;
   width: 100%;
@@ -1057,7 +1189,7 @@ button {
   padding: 40px;
 }
 .quote-from-stranger-top {
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
