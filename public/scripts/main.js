@@ -91,17 +91,18 @@ if (clearBtn != undefined) {
 }
 
 //DISPLAYING THE NO DESKTOP MESSAGE
-//const noDesktopMessage = () => {
+
 
 const message = "<div class='no-desktop-container'><div class='no-desktop-text'><h1>Desktop version under construction.</h1><p>Dear visitor, welcome to Set The Bar! <br> Please note that the desktop version is still under construction. Scan the QR code to visit this app on your phone. <br> Kind regards, Set the Bar Team</p></div><div class='qr'></div></div>"
 
-if (window.innerWidth >= 620) {
+const noDesktopMessage = () => {
+
+if (window.innerWidth >= 700) {
   document.body.insertAdjacentHTML('beforebegin', message)
 
 }
-//}
-
-// noDesktopMessage()
+}
+ noDesktopMessage()
 
 
 // FILTERING ALGORITHM
