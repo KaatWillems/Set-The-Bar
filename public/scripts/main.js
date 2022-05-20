@@ -97,7 +97,7 @@ const message = "<div class='no-desktop-container'><div class='no-desktop-text'>
 
 const noDesktopMessage = () => {
 
-if (window.innerWidth >= 700) {
+if (window.innerWidth > 981) {
   document.body.insertAdjacentHTML('beforebegin', message)
 
 }
