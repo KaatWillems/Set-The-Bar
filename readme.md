@@ -1,24 +1,32 @@
-# Your Favicon Package
+ # Set the Bar
 
-This package was generated with [RealFaviconGenerator](https://realfavicongenerator.net/) [v0.16](https://realfavicongenerator.net/change_log#v0.16)
+- First group project of Anthony Hoyas (@AnthonyHoyas), Sebastian Herrera (@sebherrerabe) and Kaat Willems (@KaatWillems)
+- Technologies used: Javascript, EJS, Node JS, Express, CSS, Puppeteer(scraped bar data). We made it into a PWA and deployed it to heroku server.
+- **Link:** https://set-the-bar.herokuapp.com/
+- Duration of project: 2 weeks
 
-## Install instructions
+## Screenshots
 
-To install this package:
+<img src="https://github.com/KaatWillems/Set-The-Bar/blob/master/1.register.png" height="400"> 
+<img src="https://github.com/KaatWillems/Set-The-Bar/blob/master/1.home.png" height="400"> 
+<img src="https://github.com/KaatWillems/Set-The-Bar/blob/master/1.home.png" height="400"> 
+<img src="https://github.com/KaatWillems/Set-The-Bar/blob/master/2.detail-bar_1.png" height="400"> 
+<img src="https://github.com/KaatWillems/Set-The-Bar/blob/master/3.detail-bar_2.png" height="400"> 
+<img src="https://github.com/KaatWillems/Set-The-Bar/blob/master/6.filter.png" height="400"> 
+<img src="https://github.com/KaatWillems/Set-The-Bar/blob/master/5.review-page.png" height="400"> 
 
-Extract this package in the root of your web site. If your site is <code>http://www.example.com</code>, you should be able to access a file named <code>http://www.example.com/favicon.ico</code>.
 
-Insert the following code in the `head` section of your pages:
+## Why Set the Bar
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4d194d">
-    <meta name="apple-mobile-web-app-title" content="Set The Bar">
-    <meta name="application-name" content="Set The Bar">
-    <meta name="msapplication-TileColor" content="#603cba">
-    <meta name="theme-color" content="#4d194d">
+Tired of visiting the same old bars? Looking to explore new trendy places, but want to make sure the current atmosphere is on point and there are currently no creepy people around? <br />
+With **Set The Bar** you can view _live meters_ of every bar that give you more information on: hygiene, atmosphere (dancing or chatting), crowd (full house or room for more) and safety.  🍸
 
-*Optional* - Check your favicon with the [favicon checker](https://realfavicongenerator.net/favicon_checker)
+#### Persona: Marie De Witte
+
+Marie is a 29 year old, living in Brussels. She works as a nurse in the hospital and earns a good income. As she is working one weekend out of two, she wants to get most out of her night out with friends.  <br />
+Marie is single and actively looking for a boyfriend. She likes to have a nice time and discover new bars, but is fed up with dirty student bars, and needing to pay attention noone messes with her drink.  
+
+## Evaluation
+
+Looking back to this project there are many things we would do differntly now, but it was a good learning experience for collaboration, git and github and we had a lot of fun! 
+
